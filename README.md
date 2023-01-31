@@ -6,17 +6,26 @@ Game Theme: Roots
 Global Game Jam Sites and TODOs
 
 Day 1 Goals: (1/30/2023)
-- [ ] Unity 3d 3rd Person Project - WebExport
+- [X] Unity 3d 3rd Person Project - WebExport
 - [X] Github Repo
-- [ ] Story / Purpose / Concept Art / Concept Mechanics
-    - [ ] Alien & Reptiles, Insects
-- [ ] Krita Project Setup
-- [ ] Blender Project Setup
-- [ ] Audacity Project Setup
-- [ ] Firebase Crashlytics
+- [X] Story / Purpose / Concept Art / Concept Mechanics
+    - Alien & Reptiles, Insects. Collect TapRoot, Hide And Seek, PS1 Style? 
+- [X] Krita Project Setup
+- [X] Blender Project Setup
+- [X] Audacity Project Setup
 
 Day 2 Goals: (1/31/2023)
+- [ ] Firebase Crashlytics
 - [ ] Game Mechanics
+     - [ ] Hide and Seek
+     - [ ] Seek Item
+     - [ ] Noise Detection
+     - [ ] Enemy AI - Follow Target
+     - [ ] "powers" - Invisible, SoundProof 
+     - [ ] Timer / CountDown / CoolDown
+     - [ ] Collection/Collectables
+     - [ ] Multiple Endings Based on %
+       - [ ] Hidden Boss Battle (Harm or Trap win condition)
 - [ ] Game Controls
 - [ ] Web Build
 - [ ] Text Asset Images/Atlas (Visual)
@@ -24,9 +33,8 @@ Day 2 Goals: (1/31/2023)
 - [ ] Character Damage (Audio + Visual FX)
 - [ ] Character Storage For Pickup Items (Visual)
 - [ ] Level Timer (Audio + Visual FX)
-
-- [ ] Item Pickup (Audio + Visual FX)
-- [ ] Score Tracking
+- [X] Item Pickup (Audio + Visual FX)
+- [X] Score Tracking
 - [ ] Local Storage 
     - [ ] Audio Levels
     - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
@@ -34,8 +42,13 @@ Day 2 Goals: (1/31/2023)
 - [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)
 
 Day 3 Goals: (2/1/2023)
+- [ ] Blender Motion Capture
 - [ ] Visual Story
+- [ ] FX - Screen Shake
+- [ ] Add Bird White Stork
 - [ ] World Building (Design & FX)
+- [ ] 2D Assets
+- [ ] 3D Assets
 - [ ] Web Build
 - [ ] Bugs Review
 
@@ -77,8 +90,8 @@ A Friend In Need: Implement a character that aids you in your goal in the game.
 
 
 ## Story
-- Awaken in a foreing Planet, In a home that is not yours. 
-- Empathetic Insect Companion Friend
+- Land in New Planet Looking for resources.
+- Empathetic Insect Companion Friend ( Detect TapRoots, Detect Enemy Sound)
 - Reptilians Fear the unknown
 - Reptilian hive mind. 
 - Being found by a Reptile causes end of game. (Hide and Seek)
