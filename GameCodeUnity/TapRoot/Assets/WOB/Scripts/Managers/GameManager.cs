@@ -23,34 +23,38 @@ public class GameManager : MonoBehaviour
 
 
     [Header("UI Only")]
-    [SerializeField] TMPro.TMP_Text ScoreDisplay;
+    [SerializeField] TMPro.TMP_Text scoreDisplay;
+    [SerializeField] GameObject gameOverScreen;
 
     [Header("Debug Only")]
     [SerializeField]
     GameStates currentGameState;
+    Timer gameTimeLimit;
 
 
 
     private void OnEnable()
     {
         PIckupItem.OnItemPickup += OnItemPickupHandler;
+        Timer.OnTimerExpired += OnTimerExpiredHandler;
+        GameManager.GameStateChange += GameStateChangeHandler;
     }
 
     private void OnDisable()
     {
         PIckupItem.OnItemPickup -= OnItemPickupHandler;
+        Timer.OnTimerExpired -= OnTimerExpiredHandler;
+        GameManager.GameStateChange -= GameStateChangeHandler;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        GameStateChange += GameStateChangeHandler;
+        gameTimeLimit = GetComponent<Timer>();
     }
 
-    void GameStateChangeHandler(GameStates new_state)
-    {
-        currentGameState = new_state;
-    }
+    #region Handlers For gamePlay
 
     void HandlePauseScreen()
     {
@@ -58,11 +62,19 @@ public class GameManager : MonoBehaviour
     }
     void HandleIntroScreen() { }
     void HandlePlayScreen() {
-        ScoreDisplay.SetText(String.Format("Score: {0}", score));
+        scoreDisplay.SetText(String.Format("Score: {0}", score));
     }
     void HandleCutSceneScreen() { }
     void HandleEndingScreen() { }
-    void HandleGameOverScreen() { }
+    void HandleGameOverScreen() {
+        // Force of habit to stop all
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
+
+    }
+    #endregion
+
+
 
     // Update is called once per frame
     void Update()
@@ -90,8 +102,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    #region Custom Event Handlers
     public void OnItemPickupHandler(PickUpItemStruct item)
     {
         score += item.pickupPoints;
     }
+
+    void OnTimerExpiredHandler()
+    {
+
+        GameStateChange?.Invoke(GameStates.GameOver);
+    }
+
+
+    void GameStateChangeHandler(GameStates new_state)
+    {
+        currentGameState = new_state;
+    }
+
+
+    #endregion
+
 }

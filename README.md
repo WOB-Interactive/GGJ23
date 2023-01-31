@@ -23,17 +23,16 @@ Day 2 Goals: (1/31/2023)
      - [ ] Hide and Seek
      - [ ] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
-     - [ ] Timer / CountDown / CoolDown
+     - [X] Timer / CountDown / CoolDown
      - [ ] Collection/Collectables
      - [ ] Multiple Endings Based on %
        - [ ] Hidden Boss Battle (Harm or Trap win condition)
 - [ ] Game Controls
-- [ ] Web Build
 - [ ] Text Asset Images/Atlas (Visual)
 - [X] Subtitle Text for sound Effects (Visual)
-- [ ] Character Damage (Audio + Visual FX)
+- [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]
 - [ ] Character Storage For Pickup Items (Visual)
-- [ ] Level Timer (Audio + Visual FX)
+- [X] Level Timer (Audio + Visual FX)
 - [X] Item Pickup (Audio + Visual FX)
 - [X] Score Tracking
 - [ ] Local Storage 
@@ -48,6 +47,7 @@ Day 2 Goals: (1/31/2023)
  - [ ] Game States 
  - [ ] Event Handlers
 - [ ] Player & Companion States
+- [ ] Web Build
 
 
 Day 3 Goals: (2/1/2023)
