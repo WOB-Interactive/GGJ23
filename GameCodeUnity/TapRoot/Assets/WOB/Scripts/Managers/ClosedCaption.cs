@@ -8,11 +8,12 @@ public class ClosedCaption : MonoBehaviour
 {
     TMP_Text textDisplay;
     Image panelDisplay;
+    bool captionsEnabled;
 
 
     private void OnEnable()
     {
-        AudioManager.closedCaption += DisplayCaption;
+        AudioManager.closedCaption += DisplayCaption;        
     }
 
     private void OnDisable()
@@ -25,6 +26,7 @@ public class ClosedCaption : MonoBehaviour
     {
         panelDisplay = GetComponent<Image>();
         textDisplay = GetComponentInChildren<TMP_Text>();
+        captionsEnabled = Storage.GetClosedCaptionEnabled();
     }
 
     // Update is called once per frame
@@ -35,7 +37,10 @@ public class ClosedCaption : MonoBehaviour
 
     void DisplayCaption(string text)
     {
-        StartCoroutine(DisplayCaptionAnimation(text, 5));
+        if (captionsEnabled)
+        {
+            StartCoroutine(DisplayCaptionAnimation(text, 5));
+        }
     }
 
     private void Reset()

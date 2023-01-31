@@ -15,13 +15,12 @@ Day 1 Goals: (1/30/2023)
 - [X] Audacity Project Setup
 
 Day 2 Goals: (1/31/2023)
-- [ ] Firebase Crashlytics
 - [ ] Game Mechanics
     - [ ] Companion 
         - [ ] Seek Item
         - [ ] Noise Detection
         - [ ] Health System
-     - [ ] Hide and Seek 
+     - [ ] Hide and Seek
      - [ ] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
      - [ ] Timer / CountDown / CoolDown
@@ -38,19 +37,23 @@ Day 2 Goals: (1/31/2023)
 - [X] Item Pickup (Audio + Visual FX)
 - [X] Score Tracking
 - [ ] Local Storage 
-    - [ ] Audio Levels
+    - [X] Audio Levels
     - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
-    - [ ] Game Reset   
-- [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)
+    - [X] HighScore
+    - [ ] Time To Complete
+    - [ ] Completionist
+    - [ ] Inventory
+    - [X] Game Reset   
 - [ ] Game Manager
- - [ ] Game States
+ - [ ] Game States 
  - [ ] Event Handlers
+- [ ] Player & Companion States
 
 
 Day 3 Goals: (2/1/2023)
 - [ ] Blender Motion Capture
 - [ ] Visual Story
-- [ ] FX - Screen Shake
+- [ ] VFX - Screen Shake
 - [ ] Add Bird White Stork
 - [ ] World Building (Design & FX)
 - [ ] 2D Assets
@@ -68,6 +71,8 @@ Day 5 Goals: (2/3/2023)
 - [ ] Bugs Review
 
 Day 6 Goals: (2/4/2023)
+- [ ] Firebase Crashlytics (Android Only)
+- [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)
 - [ ] Web Build
 - [ ] Bugs Review
 

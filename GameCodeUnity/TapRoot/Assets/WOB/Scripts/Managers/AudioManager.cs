@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] [Range(0f, 1.0f)] float bgAudioVolume = .75f;
     [SerializeField] Sound[] sounds;
 
+    bool soundEnabled = true;
     void Awake()
     {
         if (instance == null)
@@ -37,6 +38,11 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
 
+        // Load Sound volume from storage
+        bgAudioVolume = Storage.GetBGLevel();
+        fxAudioVolume = Storage.GetFXLevel();
+        soundEnabled = Storage.GetAudioEnabled();
+
     }
 
     public void PlaySound(string _name)
@@ -48,12 +54,18 @@ public class AudioManager : MonoBehaviour
 
                 if (sounds[i].loop)
                 {
-                    sounds[i].Play(bgAudioVolume);
+                    if (soundEnabled)
+                    {
+                        sounds[i].Play(bgAudioVolume);
+                    }
                 }
                 else
                 {
-                    sounds[i].Play(fxAudioVolume);
-                    Debug.Log("Catpion");
+                    if (soundEnabled)
+                    {
+                        sounds[i].Play(fxAudioVolume);
+                    }
+                    
                     closedCaption.Invoke(sounds[i].caption);
                 }
 
