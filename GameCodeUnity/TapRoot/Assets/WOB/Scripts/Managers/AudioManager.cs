@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
+
+    public static event Action<String> closedCaption;
+
     public static AudioManager instance = null;
     [SerializeField]public  bool muted = false;
     [SerializeField] [Range(0f, 1.0f)] float fxAudioVolume = .5f;
@@ -49,6 +53,8 @@ public class AudioManager : MonoBehaviour
                 else
                 {
                     sounds[i].Play(fxAudioVolume);
+                    Debug.Log("Catpion");
+                    closedCaption.Invoke(sounds[i].caption);
                 }
 
                 return;

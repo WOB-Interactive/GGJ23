@@ -17,9 +17,11 @@ Day 1 Goals: (1/30/2023)
 Day 2 Goals: (1/31/2023)
 - [ ] Firebase Crashlytics
 - [ ] Game Mechanics
-     - [ ] Hide and Seek
-     - [ ] Seek Item
-     - [ ] Noise Detection
+    - [ ] Companion 
+        - [ ] Seek Item
+        - [ ] Noise Detection
+        - [ ] Health System
+     - [ ] Hide and Seek 
      - [ ] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
      - [ ] Timer / CountDown / CoolDown
@@ -29,7 +31,7 @@ Day 2 Goals: (1/31/2023)
 - [ ] Game Controls
 - [ ] Web Build
 - [ ] Text Asset Images/Atlas (Visual)
-- [ ] Subtitle Text for sound Effects (Visual)
+- [X] Subtitle Text for sound Effects (Visual)
 - [ ] Character Damage (Audio + Visual FX)
 - [ ] Character Storage For Pickup Items (Visual)
 - [ ] Level Timer (Audio + Visual FX)
@@ -40,6 +42,10 @@ Day 2 Goals: (1/31/2023)
     - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
     - [ ] Game Reset   
 - [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)
+- [ ] Game Manager
+ - [ ] Game States
+ - [ ] Event Handlers
+
 
 Day 3 Goals: (2/1/2023)
 - [ ] Blender Motion Capture
@@ -84,7 +90,7 @@ Caption Contest: 2023 is the 30th anniversary of subtitling in games. Your game 
 
 Proximity Effect: Make all of your game music using only objects that are in close environment (for example, tapping pen on table to create a beat, etc).
 
-An Image Is Worth 1,000 Words: Make a game that has no text.
+An Image Is Worth 1,000 Words: Make a game that has no text. ( Option to remove Closed Caption)
 
 A Friend In Need: Implement a character that aids you in your goal in the game. 
 

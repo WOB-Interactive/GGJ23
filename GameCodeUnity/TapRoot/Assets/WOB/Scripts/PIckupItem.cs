@@ -11,13 +11,11 @@ public class PIckupItem : MonoBehaviour
     [SerializeField]
     ParticleSystem FX;
     [SerializeField]
+    [Tooltip("Sound to Play when Picked Up")]
     string pickupSoundFX;
-    [SerializeField]
-    [Range(0f, 1.0f)]
-    float pickupAudioVolume = 0.5f;
-    [Range(0f, 3.0f)]
+    [Range(0f, 5.0f)]
     [Tooltip("This will be how long the item will last before it's fully destroyed")]
-    float objectDestroyLifetime = 10f;
+    float objectDestroyLifetime = 5f;
 
     [SerializeField]
     PickUpItemStruct item;
@@ -47,8 +45,4 @@ public class PIckupItem : MonoBehaviour
 
     }
 
-    private void OnDestroy()
-    {
-        Debug.LogError("This was called why?");
-    }
 }
