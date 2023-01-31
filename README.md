@@ -9,6 +9,7 @@ Day 1 Goals: (1/30/2023)
 - [ ] Unity 3d 3rd Person Project - WebExport
 - [X] Github Repo
 - [ ] Story / Purpose / Concept Art / Concept Mechanics
+    - [ ] Alien & Reptiles, Insects
 - [ ] Krita Project Setup
 - [ ] Blender Project Setup
 - [ ] Audacity Project Setup
@@ -75,3 +76,21 @@ An Image Is Worth 1,000 Words: Make a game that has no text.
 A Friend In Need: Implement a character that aids you in your goal in the game. 
 
 
+## Story
+- Awaken in a foreing Planet, In a home that is not yours. 
+- Empathetic Insect Companion Friend
+- Reptilians Fear the unknown
+- Reptilian hive mind. 
+- Being found by a Reptile causes end of game. (Hide and Seek)
+- Need collection of baby roots to re-vegitate your world
+ - Edible Taproots Found on Earth: Carrots, radishes, turnips, beets. ( Different root = different ability)
+
+## Art Style 
+- PS1 Graphics
+- Lizards, Snakes, Gecko, Eggs, Incubation area, 
+- Underground, Cave Dungeon, Land Area, The Hunted Woods ( Skeletons of humans, reptiles, animals) (OP FIGHT IF we introduce violence).
+- Pretty Gems! (Points / Collectable track) [Facts: Diamonds are the only gems of carbon. Sapphires and rubies are corundum, aluminum oxide. Emeralds are beryl. Herkimer diamonds are quartz, silicon dioxide.] Chemical compound is importance of this note we want. 
+- 
+
+
+[]
