@@ -24,8 +24,8 @@ public class Companion : MonoBehaviour
     public static event Action<int> CompanionHurt;
     public static event Action CompanionDead;
     public static event Action<int> CompanionHealing;
-    public static event Action ItemFound;
     public static event Action<int> EnemyNear;
+    public static event Action Search;
 
     int maxHealth = 5;
     [SerializeField]
@@ -37,6 +37,10 @@ public class Companion : MonoBehaviour
     [SerializeField]
     [Range(0.2f, 10f)]
     float distanceToFollow = 5;
+    [SerializeField]
+    float searchFieldRadius = 5;
+    [SerializeField]
+    GameObject searchField;
 
 
     [SerializeField]
@@ -56,6 +60,7 @@ public class Companion : MonoBehaviour
     Animator companionAnimation;
     NavMeshAgent meshAgent;
     bool isDead = false;
+    bool searching = false;
 
 
 
@@ -63,21 +68,23 @@ public class Companion : MonoBehaviour
     {
         CompanionHurt += HandleCompanionHurt;
         CompanionHealing += HandleCompanionHeal;
+        SearchPower.EnemyFound += OnEnemyFound;
+        SearchPower.ItemFound += OnItemFound;
 
-        //EnemyNear += HandleEnemyNear;
-        
+
     }
 
     private void OnDisable()
     {
         CompanionHurt -= HandleCompanionHurt;
         CompanionHealing -= HandleCompanionHeal;
-
-        //EnemyNear -= HandleEnemyNear;
+        SearchPower.EnemyFound -= OnEnemyFound;
+        SearchPower.ItemFound -= OnItemFound;
     }
 
 
-    void HandleCompanionHurt(int amount) {
+    void HandleCompanionHurt(int amount)
+    {
         currentState = CompanionStates.Hurt_1;
         HandleHurt(amount);
     }
@@ -86,6 +93,17 @@ public class Companion : MonoBehaviour
     {
         currentState = CompanionStates.Healing;
         HandleHeal(amount);
+    }
+
+    void OnItemFound()
+    {
+        searching = false;
+    }
+
+    void OnEnemyFound()
+    {
+        HandleEnemyNear(1);
+        searching = false;
     }
 
     void HandleEnemyNear(int level)
@@ -146,24 +164,32 @@ public class Companion : MonoBehaviour
     }
 
     // This is how we will be detecting all items in our search field
-    
-
-    void HandleFindPickup() {
-        
-        //https://docs.unity3d.com/ScriptReference/Physics.SphereCast.html
-        // Steps: Cast SphearRay in General directions
-        // OnHit of Same Type Then Notify by animation.
-        // If enough health able to track down item.
 
 
-        // todo animation and tracking for searching
-        //companionAnimation?.SetBool("FollowPlayer", false);
 
-        //todo animation and notification for found
-        ItemFound?.Invoke();
+    IEnumerator ManageSearchStates()
+    {
+        if (!searching)
+        {
+            searching = true;
+            Search?.Invoke();
+        }
+        yield return new WaitForSeconds(1);
+        searching = false;
+        currentState = CompanionStates.Following;
     }
 
-    
+    void HandleFindPickup()
+    {
+
+        // todo animation 
+        //companionAnimation?.SetBool("FollowPlayer", false);
+        StartCoroutine(ManageSearchStates());
+
+
+    }
+
+
 
     [ContextMenu("Execute Enemy")]
     void DebugEnemyCheck()
@@ -171,7 +197,8 @@ public class Companion : MonoBehaviour
         HandleEnemyNearNotification(2);
     }
 
-    void HandleEnemyNearNotification(int level) {
+    void HandleEnemyNearNotification(int level)
+    {
         // here we update the companion player interaction
         //companionAnimation?.SetBool("FollowPlayer", true);
         //companionAnimation?.SetBool("EnemyNear", false);
@@ -190,9 +217,10 @@ public class Companion : MonoBehaviour
         HandleHurt(1);
     }
 
-    void HandleHurt(int amount) {
+    void HandleHurt(int amount)
+    {
         this.health -= amount;
-        if(this.health <= 0)
+        if (this.health <= 0)
         {
             this.health = 0;
             currentState = CompanionStates.Dead;
@@ -208,8 +236,9 @@ public class Companion : MonoBehaviour
 
     }
 
-    void HandleHeal(int amount) {
-        this.health += amount; 
+    void HandleHeal(int amount)
+    {
+        this.health += amount;
         if (this.health > maxHealth)
         {
             this.health = maxHealth;
@@ -221,7 +250,8 @@ public class Companion : MonoBehaviour
         AudioManager.instance.PlaySound(healSoundFX);
     }
 
-    void HandleDead() {
+    void HandleDead()
+    {
         AudioManager.instance.PlaySound(deathSoundFX);
         isDead = true;
         StartCoroutine("DisableCompanion");

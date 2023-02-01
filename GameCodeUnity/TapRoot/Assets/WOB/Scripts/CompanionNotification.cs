@@ -10,7 +10,7 @@ public class CompanionNotification : MonoBehaviour
     float notificationDisplayTime = 5f;
     [SerializeField]
     Image notificationImage;
-    
+
     Animator animator;
     [SerializeField]
     bool displayNotification = false;
@@ -33,13 +33,13 @@ public class CompanionNotification : MonoBehaviour
     private void OnEnable()
     {
         Companion.EnemyNear += OnEnemyNear;
-        Companion.ItemFound += OnItemFound;
+        SearchPower.ItemFound += OnItemFound;
     }
 
     private void OnDisable()
     {
         Companion.EnemyNear -= OnEnemyNear;
-        Companion.ItemFound -= OnItemFound;
+        SearchPower.ItemFound -= OnItemFound;
     }
 
     void OnItemFound()
@@ -69,11 +69,11 @@ public class CompanionNotification : MonoBehaviour
         StartCoroutine("RemoveNotice");
     }
 
-     IEnumerator RemoveNotice()
+    IEnumerator RemoveNotice()
     {
         displayNotification = false;
-        yield return new WaitForSeconds(notificationDisplayTime);        
+        yield return new WaitForSeconds(notificationDisplayTime);
         notificationImage.sprite = null;
         animator.SetBool("Notify", displayNotification);
-    }   
+    }
 }

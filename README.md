@@ -16,54 +16,83 @@ Day 1 Goals: (1/30/2023)
 
 Day 2 Goals: (1/31/2023)
 - [ ] Game Mechanics
+    ~~- [ ] Death Areas~~
     - [X] Companion 
-        - [ ] Seek Item
-        - [ ] Noise Detection
+        - [X] Seek Item
+        ~~- [ ] Noise Detection~~
         - [X] Health System
         - [X] Follow Player
-     - [ ] Hide and Seek
-     - [ ] Enemy AI - Follow Target
-     - [ ] "powers" - Invisible, SoundProof 
-     - [ ] Fall Damage Because of stronger Gravity in Planet.
+     ~~- [ ] Hide and Seek~~
+     ~~- [ ] Enemy AI - Follow Target~~
+     ~~- [ ] "powers" - Invisible, SoundProof ~~
+     ~~- [ ] Fall Damage Because of stronger Gravity in Planet.~~
      - [X] Timer / CountDown / CoolDown
-     - [ ] Collection/Collectables
-     - [ ] Multiple Endings Based on %
-       - [ ] Hidden Boss Battle (Harm or Trap win condition)
-- [ ] Game Controls
-- [ ] Text Asset Images/Atlas (Visual)
+     ~~- [ ] Collection/Collectables~~
+     ~~- [ ] Multiple Endings Based on %~~
+       ~~- [ ] Hidden Boss Battle (Harm or Trap win condition)~~
+~~- [ ] Game Controls~~
+~~- [ ] Text Asset Images/Atlas (Visual)~~
 - [X] Subtitle Text for sound Effects (Visual)
-- [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]
-- [ ] Character Storage For Pickup Items (Visual)
+~~- [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]~~
+~~- [ ] Character Storage For Pickup Items (Visual)~~
 - [X] Level Timer (Audio + Visual FX)
 - [X] Item Pickup (Audio + Visual FX)
 - [X] Score Tracking
 - [ ] Local Storage 
     - [X] Audio Levels
-    - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
+    ~~- [ ] Last Location (Adding a location area save just in case I get in a deep groove )~~
     - [X] HighScore
+    ~~- [ ] Time To Complete~~
+    ~~- [ ] Completionist~~
+    ~~- [ ] Inventory~~
+    - [X] Game Reset   
+~~- [ ] Game Manager~~
+ ~~- [ ] Game States ~~
+ ~~- [ ] Event Handlers~~
+- [/] Player & Companion States
+~~- [ ] Web Build~~
+- [X] Bugs Review
+
+[~~ x~~ :  Moved to Next Day]
+
+
+Day 3 Goals: (2/1/2023)
+
+- [ ] Game Mechanics
+    - [ ] Death Areas
+    - [] Companion     
+        - [ ] Noise Detection       
+     - [ ] Hide and Seek
+     - [ ] Enemy AI - Follow Target
+     - [ ] "powers" - Invisible, SoundProof 
+     - [ ] Fall Damage Because of stronger Gravity in Planet.     
+     - [ ] Collection/Collectables
+     - [ ] Multiple Endings Based on %
+       - [ ] Hidden Boss Battle (Harm or Trap win condition)
+- [ ] Game Controls
+- [ ] Text Asset Images/Atlas (Visual)
+- [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]
+- [ ] Character Storage For Pickup Items (Visual)
+- [ ] Local Storage 
+    - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
     - [ ] Time To Complete
     - [ ] Completionist
     - [ ] Inventory
-    - [X] Game Reset   
 - [ ] Game Manager
  - [ ] Game States 
  - [ ] Event Handlers
 - [ ] Player & Companion States
 - [ ] Web Build
-
-
-Day 3 Goals: (2/1/2023)
-- [ ] Blender Motion Capture
-- [ ] Visual Story
 - [ ] VFX - Screen Shake
 - [ ] Add Bird White Stork
-- [ ] World Building (Design & FX)
-- [ ] 2D Assets
-- [ ] 3D Assets
-- [ ] Web Build
 - [ ] Bugs Review
 
 Day 4 Goals: (2/2/2023)
+- [ ] World Building (Design & FX)
+- [ ] 2D Assets
+- [ ] 3D Assets
+- [ ] Blender Motion Capture
+- [ ] Visual Story
 - [ ] Main BG Audio
 - [ ] Web Build
 - [ ] Bugs Review
