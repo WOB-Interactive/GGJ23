@@ -24,8 +24,8 @@ public class Companion : MonoBehaviour
     public static event Action<int> CompanionHurt;
     public static event Action CompanionDead;
     public static event Action<int> CompanionHealing;
-    public static event Action ItemFound;
     public static event Action<int> EnemyNear;
+    public static event Action Search;
 
     int maxHealth = 5;
     [SerializeField]
@@ -37,6 +37,10 @@ public class Companion : MonoBehaviour
     [SerializeField]
     [Range(0.2f, 10f)]
     float distanceToFollow = 5;
+    [SerializeField]
+    float searchFieldRadius = 5;
+    [SerializeField]
+    GameObject searchField;
 
 
     [SerializeField]
@@ -56,6 +60,7 @@ public class Companion : MonoBehaviour
     Animator companionAnimation;
     NavMeshAgent meshAgent;
     bool isDead = false;
+    bool searching = false;
 
 
 
@@ -63,8 +68,9 @@ public class Companion : MonoBehaviour
     {
         CompanionHurt += HandleCompanionHurt;
         CompanionHealing += HandleCompanionHeal;
+        SearchPowers.EnemyFound += OnEnemyFound;
+        SearchPowers.ItemFound += OnItemFound;
 
-        //EnemyNear += HandleEnemyNear;
         
     }
 
@@ -72,8 +78,8 @@ public class Companion : MonoBehaviour
     {
         CompanionHurt -= HandleCompanionHurt;
         CompanionHealing -= HandleCompanionHeal;
-
-        //EnemyNear -= HandleEnemyNear;
+        SearchPowers.EnemyFound -= OnEnemyFound;
+        SearchPowers.ItemFound -= OnItemFound;
     }
 
 
@@ -86,6 +92,17 @@ public class Companion : MonoBehaviour
     {
         currentState = CompanionStates.Healing;
         HandleHeal(amount);
+    }
+
+    void OnItemFound()
+    {
+        searching = false;
+    }
+
+    void OnEnemyFound()
+    {
+        HandleEnemyNear(1);
+        searching = false;
     }
 
     void HandleEnemyNear(int level)
@@ -148,19 +165,27 @@ public class Companion : MonoBehaviour
     // This is how we will be detecting all items in our search field
     
 
+
+    IEnumerator ManageSearchStates()
+    {
+        if (!searching)
+        {
+            searching = true;
+            Search?.Invoke();
+            Debug.Log("Searching");
+        }
+        yield return new WaitForSeconds(1);
+        searching = false;
+        currentState = CompanionStates.Following;
+    }
+
     void HandleFindPickup() {
-        
-        //https://docs.unity3d.com/ScriptReference/Physics.SphereCast.html
-        // Steps: Cast SphearRay in General directions
-        // OnHit of Same Type Then Notify by animation.
-        // If enough health able to track down item.
 
-
-        // todo animation and tracking for searching
+        // todo animation 
         //companionAnimation?.SetBool("FollowPlayer", false);
+        StartCoroutine(ManageSearchStates());
+        
 
-        //todo animation and notification for found
-        ItemFound?.Invoke();
     }
 
     

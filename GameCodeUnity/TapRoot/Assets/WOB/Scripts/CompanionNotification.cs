@@ -33,17 +33,18 @@ public class CompanionNotification : MonoBehaviour
     private void OnEnable()
     {
         Companion.EnemyNear += OnEnemyNear;
-        Companion.ItemFound += OnItemFound;
+        SearchPowers.ItemFound += OnItemFound;
     }
 
     private void OnDisable()
     {
         Companion.EnemyNear -= OnEnemyNear;
-        Companion.ItemFound -= OnItemFound;
+        SearchPowers.ItemFound -= OnItemFound;
     }
 
     void OnItemFound()
     {
+        Debug.Log("WE Got Items");
         NotifyHandler(itemFound);
     }
 
