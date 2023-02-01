@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         Timer.OnTimerExpired += OnTimerExpiredHandler;
         GameManager.GameStateChange += GameStateChangeHandler;
         PlayerFeatures.OnPlayerDeath += OnPlayerDeathHandler;
+        DeathZone.OnPlayerKilledInZone += OnPlayerKilledInZoneHandler;
     }
 
     private void OnDisable()
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         Timer.OnTimerExpired -= OnTimerExpiredHandler;
         GameManager.GameStateChange -= GameStateChangeHandler;
         PlayerFeatures.OnPlayerDeath -= OnPlayerDeathHandler;
+        DeathZone.OnPlayerKilledInZone -= OnPlayerKilledInZoneHandler;
 
     }
 
@@ -125,6 +127,12 @@ public class GameManager : MonoBehaviour
 
     void OnPlayerDeathHandler()
     {
+        GameStateChange?.Invoke(GameStates.GameOver);
+    }
+
+    void OnPlayerKilledInZoneHandler()
+    {
+        // here we should put some special graphics to add some flair to the deaths
         GameStateChange?.Invoke(GameStates.GameOver);
     }
 

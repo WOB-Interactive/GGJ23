@@ -14,6 +14,7 @@ public class PlayerFeatures : MonoBehaviour
 {
 
     public static event Action OnPlayerDeath;
+    PlayerStates currentState = PlayerStates.Alive;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,6 +23,12 @@ public class PlayerFeatures : MonoBehaviour
         {
             OnPlayerDeath?.Invoke();
         }
+    }
+
+    public void PlayerKilled()
+    {
+        currentState = PlayerStates.Dead;
+        OnPlayerDeath?.Invoke();
     }
 
 
