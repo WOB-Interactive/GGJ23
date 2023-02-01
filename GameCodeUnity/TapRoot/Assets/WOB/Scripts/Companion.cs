@@ -39,19 +39,32 @@ public class Companion : MonoBehaviour
     float distanceToFollow = 5;
 
 
-    Animator companionAnimation;
-    Rigidbody rigidbody;
     [SerializeField]
     float speed = 5f;
 
+    [Header("SOUND FX")]
+    [SerializeField]
+    string enemyNearSoundFX;
+    [SerializeField]
+    string hurtSoundFX;
+    [SerializeField]
+    string healSoundFX;
+    [SerializeField]
+    string deathSoundFX;
 
+
+    Animator companionAnimation;
     NavMeshAgent meshAgent;
+    bool isDead = false;
+
+
 
     private void OnEnable()
     {
         CompanionHurt += HandleCompanionHurt;
         CompanionHealing += HandleCompanionHeal;
-        EnemyNear += HandleEnemyNear;
+
+        //EnemyNear += HandleEnemyNear;
         
     }
 
@@ -59,7 +72,8 @@ public class Companion : MonoBehaviour
     {
         CompanionHurt -= HandleCompanionHurt;
         CompanionHealing -= HandleCompanionHeal;
-        EnemyNear -= HandleEnemyNear;
+
+        //EnemyNear -= HandleEnemyNear;
     }
 
 
@@ -83,13 +97,14 @@ public class Companion : MonoBehaviour
 
         currentState = CompanionStates.enemy_near_1;
 
+        HandleEnemyNearNotification(level);
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        companionAnimation = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
+        //companionAnimation = GetComponent<Animator>();
         meshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -98,20 +113,18 @@ public class Companion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(currentState)
+        if (!isDead)
         {
-            case CompanionStates.Following:
-                HandleFollowPlayer();
-                break;
-            case CompanionStates.Find_Pickup:
-                HandleFindPickup();
-                break;
-            case CompanionStates.enemy_near_1:
-                HandleEnemyNear();
-                break;
-            case CompanionStates.Dead:
-                HandleDead();
-                break;
+            switch (currentState)
+            {
+                case CompanionStates.Following:
+                    HandleFollowPlayer();
+                    ListenForEnemies();
+                    break;
+                case CompanionStates.Find_Pickup:
+                    HandleFindPickup();
+                    break;
+            }
         }
     }
 
@@ -121,11 +134,16 @@ public class Companion : MonoBehaviour
         meshAgent.SetDestination(playerLoc.transform.position);
 
         // todo animation 
-        companionAnimation.SetBool("FollowPlayer", true);        
+        //companionAnimation?.SetBool("FollowPlayer", true);        
     }
 
 
-    
+    void ListenForEnemies()
+    {
+        //todo this is another projection we want to see when we can prevent being noticed
+
+        // this will call the enemy nearCheck
+    }
 
     // This is how we will be detecting all items in our search field
     
@@ -139,19 +157,39 @@ public class Companion : MonoBehaviour
 
 
         // todo animation and tracking for searching
-        companionAnimation.SetBool("FollowPlayer", false);
+        //companionAnimation?.SetBool("FollowPlayer", false);
 
         //todo animation and notification for found
         ItemFound?.Invoke();
     }
 
     
-    void HandleEnemyNear() {
-        // here we update the companion player interaction
-        companionAnimation.SetBool("FollowPlayer", true);
-        companionAnimation.SetBool("EnemyNear", false);
-        // new Animation/Color? 
+
+    [ContextMenu("Execute Enemy")]
+    void DebugEnemyCheck()
+    {
+        HandleEnemyNearNotification(2);
     }
+
+    void HandleEnemyNearNotification(int level) {
+        // here we update the companion player interaction
+        //companionAnimation?.SetBool("FollowPlayer", true);
+        //companionAnimation?.SetBool("EnemyNear", false);
+        // new Animation/Color? 
+
+        //Todo Apply Sound FX    
+
+        EnemyNear?.Invoke(level);
+        AudioManager.instance.PlaySound(enemyNearSoundFX);
+    }
+
+
+    [ContextMenu("Take Damage")]
+    void TakeDamage()
+    {
+        HandleHurt(1);
+    }
+
     void HandleHurt(int amount) {
         this.health -= amount;
         if(this.health <= 0)
@@ -159,10 +197,15 @@ public class Companion : MonoBehaviour
             this.health = 0;
             currentState = CompanionStates.Dead;
             CompanionDead?.Invoke();
+            HandleDead();
         }
 
         //todo Apply Animation
-        companionAnimation.SetTrigger("Hurt");
+        //companionAnimation?.SetTrigger("Hurt");
+        //Todo Apply Sound FX
+        AudioManager.instance.PlaySound(hurtSoundFX);
+
+
     }
 
     void HandleHeal(int amount) {
@@ -173,13 +216,27 @@ public class Companion : MonoBehaviour
         }
 
         //todo Apply Animation
-        companionAnimation.SetTrigger("Heal");
+        //companionAnimation?.SetTrigger("Heal");
+        //Todo Apply Sound FX
+        AudioManager.instance.PlaySound(healSoundFX);
     }
 
     void HandleDead() {
+        AudioManager.instance.PlaySound(deathSoundFX);
+        isDead = true;
+        StartCoroutine("DisableCompanion");
+
+    }
+
+    IEnumerator DisableCompanion()
+    {
         //todo Apply animation
-        companionAnimation.SetBool("FollowPlayer", false);
-        companionAnimation.SetTrigger("Dead");
+        //companionAnimation?.SetBool("FollowPlayer", false);
+        //companionAnimation?.SetTrigger("Dead");
+        yield return new WaitForSeconds(3f); // death animation time
+
+        gameObject.SetActive(false);
+
     }
 
 

@@ -24,6 +24,7 @@ Day 2 Goals: (1/31/2023)
      - [ ] Hide and Seek
      - [ ] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
+     - [ ] Fall Damage Because of stronger Gravity in Planet.
      - [X] Timer / CountDown / CoolDown
      - [ ] Collection/Collectables
      - [ ] Multiple Endings Based on %

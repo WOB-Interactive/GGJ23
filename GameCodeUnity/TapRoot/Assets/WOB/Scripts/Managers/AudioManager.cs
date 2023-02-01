@@ -47,6 +47,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string _name)
     {
+        if (_name == String.Empty)
+        {
+            Debug.LogError("No Audio Title Requested");
+            return;
+        }
+
         for (int i = 0; i < sounds.Length; i++)
         {
             if (sounds[i].name == _name)
