@@ -60,10 +60,10 @@ Day 3 Goals: (2/1/2023)
 
 - [ ] Game Mechanics
     - [ ] Death Areas
-    - [] Companion     
+    - [ ] Companion     
         - [ ] Noise Detection       
      - [ ] Hide and Seek
-     - [ ] Enemy AI - Follow Target
+     - [X] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
      - [ ] Fall Damage Because of stronger Gravity in Planet.     
      - [ ] Collection/Collectables
@@ -81,7 +81,8 @@ Day 3 Goals: (2/1/2023)
 - [ ] Game Manager
  - [ ] Game States 
  - [ ] Event Handlers
-- [ ] Player & Companion States
+- [X] Companion States
+- [ ] Player States
 - [ ] Web Build
 - [ ] VFX - Screen Shake
 - [ ] Add Bird White Stork

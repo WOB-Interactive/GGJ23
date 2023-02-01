@@ -83,8 +83,10 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
+    [ContextMenu("Clear Hunt")]
     void HandleIdle()
     {
+        currentState = EnemyStates.Idle;
         scentArea.enabled = true;
         playerLoc = null;
         // todo animation 
@@ -100,12 +102,13 @@ public class BaseEnemy : MonoBehaviour
             // update for traking player
             meshAgent.SetDestination(playerLoc.transform.position);
             meshAgent.speed = speed;
-            meshAgent.stoppingDistance = distanceToFollow;
+            meshAgent.stoppingDistance = distanceToFollow;            
         }
         else
         {
-            currentState = EnemyStates.Idle;
-            meshAgent.SetDestination(transform.position); // this should set it to the current spot and let it be for life. 
+            
+            //meshAgent.SetDestination(transform.position); // this should set it to the current spot and let it be for life. 
+            HandleIdle();
         }
 
         // todo animation 
