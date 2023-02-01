@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         PIckupItem.OnItemPickup += OnItemPickupHandler;
         Timer.OnTimerExpired += OnTimerExpiredHandler;
         GameManager.GameStateChange += GameStateChangeHandler;
+        PlayerFeatures.OnPlayerDeath += OnPlayerDeathHandler;
     }
 
     private void OnDisable()
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         PIckupItem.OnItemPickup -= OnItemPickupHandler;
         Timer.OnTimerExpired -= OnTimerExpiredHandler;
         GameManager.GameStateChange -= GameStateChangeHandler;
+        PlayerFeatures.OnPlayerDeath -= OnPlayerDeathHandler;
 
     }
 
@@ -119,6 +121,11 @@ public class GameManager : MonoBehaviour
     void GameStateChangeHandler(GameStates new_state)
     {
         currentGameState = new_state;
+    }
+
+    void OnPlayerDeathHandler()
+    {
+        GameStateChange?.Invoke(GameStates.GameOver);
     }
 
 

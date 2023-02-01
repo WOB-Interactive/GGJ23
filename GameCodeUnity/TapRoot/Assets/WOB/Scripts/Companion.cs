@@ -214,6 +214,7 @@ public class Companion : MonoBehaviour
     [ContextMenu("Take Damage")]
     void TakeDamage()
     {
+        // this will be used with a damage multiplier based on enemy types
         HandleHurt(1);
     }
 
@@ -267,6 +268,14 @@ public class Companion : MonoBehaviour
 
         gameObject.SetActive(false);
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+      if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage();
+        }
     }
 
 
