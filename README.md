@@ -16,10 +16,11 @@ Day 1 Goals: (1/30/2023)
 
 Day 2 Goals: (1/31/2023)
 - [ ] Game Mechanics
-    - [ ] Companion 
+    - [X] Companion 
         - [ ] Seek Item
         - [ ] Noise Detection
-        - [ ] Health System
+        - [X] Health System
+        - [X] Follow Player
      - [ ] Hide and Seek
      - [ ] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
