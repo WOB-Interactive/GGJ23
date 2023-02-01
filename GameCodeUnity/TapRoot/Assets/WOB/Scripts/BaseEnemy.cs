@@ -38,12 +38,14 @@ public class BaseEnemy : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyNear.ItemToFollow += OnItemToFollowHandler;        
+        EnemyNear.ItemToFollow += OnItemToFollowHandler;
+        Companion.CompanionDead += OnCompanionDeadHandler;
     }
 
     private void OnDisable()
     {
         EnemyNear.ItemToFollow -= OnItemToFollowHandler;
+        Companion.CompanionDead -= OnCompanionDeadHandler;
     }
 
     void OnItemToFollowHandler(Transform transform)
@@ -51,6 +53,11 @@ public class BaseEnemy : MonoBehaviour
         playerLoc = transform.gameObject;
         currentState = EnemyStates.Following;
         //todo trigger YELL/HISSSSSS
+    }
+
+    void OnCompanionDeadHandler()
+    {
+        HandleIdle();
     }
 
     // Start is called before the first frame update
@@ -78,9 +85,11 @@ public class BaseEnemy : MonoBehaviour
 
     void HandleIdle()
     {
+        scentArea.enabled = true;
         playerLoc = null;
         // todo animation 
         //animation?.SetBool("FollowPlayer", false );
+        
     }
 
     void HandleFollowPlayer()
@@ -97,7 +106,6 @@ public class BaseEnemy : MonoBehaviour
         {
             currentState = EnemyStates.Idle;
             meshAgent.SetDestination(transform.position); // this should set it to the current spot and let it be for life. 
-            scentArea.enabled = true;
         }
 
         // todo animation 

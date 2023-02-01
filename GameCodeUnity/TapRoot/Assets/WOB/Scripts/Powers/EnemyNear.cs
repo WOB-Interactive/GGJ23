@@ -16,7 +16,7 @@ public class EnemyNear : MonoBehaviour
         } 
         else if(other.CompareTag("Player"))
         {
-           // ItemToFollow?.Invoke(other.gameObject.transform);
+           ItemToFollow?.Invoke(other.gameObject.transform);
         }
     }
 
