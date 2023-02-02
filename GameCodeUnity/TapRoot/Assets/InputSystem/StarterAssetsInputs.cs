@@ -61,6 +61,10 @@ namespace StarterAssets
 			{
 				MoveInput(value.Get<Vector2>());
 			}
+			else
+            {
+				MoveInput(new Vector2());
+            }
 		}
 
 		public void OnLook(InputValue value)

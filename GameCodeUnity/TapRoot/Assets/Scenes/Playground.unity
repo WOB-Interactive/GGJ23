@@ -288,6 +288,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &267558681
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267558671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &334605257
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +685,7 @@ MonoBehaviour:
   speed: 3.36
   enemyNearSoundFX: 
   scentArea: {fileID: 1087987740}
+  mindWipeRate: 5
 --- !u!54 &590298893
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1512,7 +1526,7 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.28
-  m_Height: 2.42
+  m_Height: 2.05
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &966253736
@@ -3708,7 +3722,7 @@ PrefabInstance:
     - target: {fileID: 3556224184191802970, guid: b8a0023c41d6fb14cb486c3aeff4419a,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3556224184191802970, guid: b8a0023c41d6fb14cb486c3aeff4419a,
         type: 3}

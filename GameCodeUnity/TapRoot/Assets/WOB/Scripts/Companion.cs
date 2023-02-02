@@ -244,9 +244,9 @@ public class Companion : MonoBehaviour
         if (this.health <= 0)
         {
             this.health = 0;
-            currentState = CompanionStates.Dead;
-            CompanionDead?.Invoke();
+            currentState = CompanionStates.Dead;            
             HandleDead();
+            CompanionDead?.Invoke();
         }
 
         //todo Apply Animation

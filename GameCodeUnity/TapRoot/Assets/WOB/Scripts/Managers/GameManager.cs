@@ -119,7 +119,6 @@ public class GameManager : MonoBehaviour
         preStartScreen.SetActive(false);
         pausedScreen.SetActive(false);
         Storage.SetHighscore(score);
-        Time.timeScale = 0;
         // Force of habit to stop all        
         gameOverScreen.SetActive(true);
 

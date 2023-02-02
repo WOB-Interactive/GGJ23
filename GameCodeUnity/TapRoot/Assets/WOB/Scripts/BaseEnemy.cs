@@ -38,6 +38,10 @@ public class BaseEnemy : MonoBehaviour
 
     bool canMove = false;
 
+    [SerializeField]
+    [Range(1.0f, 10f)]
+    float mindWipeRate = 5;
+
 
     private void OnEnable()
     {
@@ -87,6 +91,8 @@ public class BaseEnemy : MonoBehaviour
         meshAgent.speed = speed;
         meshAgent.stoppingDistance = distanceToFollow;
 
+        InvokeRepeating("HandleIdle", 1.0f, mindWipeRate);
+
     }
 
     // Update is called once per frame
@@ -125,11 +131,11 @@ public class BaseEnemy : MonoBehaviour
             // update for traking player
             meshAgent.SetDestination(playerLoc.transform.position);
             meshAgent.speed = speed;
-            meshAgent.stoppingDistance = distanceToFollow;            
+            meshAgent.stoppingDistance = distanceToFollow;      
+            
         }
         else
         {
-            
             //meshAgent.SetDestination(transform.position); // this should set it to the current spot and let it be for life. 
             HandleIdle();
         }
