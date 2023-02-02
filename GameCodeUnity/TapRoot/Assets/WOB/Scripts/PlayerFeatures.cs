@@ -18,11 +18,21 @@ public class PlayerFeatures : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        handleCollision(collision.gameObject);
+    }
+
+    private void handleCollision(GameObject collision)
+    {
+
         //todo Add Player death animation
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
             OnPlayerDeath?.Invoke();
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        handleCollision(other.gameObject);
     }
 
     public void PlayerKilled()
@@ -44,4 +54,5 @@ public class PlayerFeatures : MonoBehaviour
     {
         
     }
+
 }

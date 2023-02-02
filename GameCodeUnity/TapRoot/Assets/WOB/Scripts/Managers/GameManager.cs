@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 public enum GameStates
@@ -36,6 +38,11 @@ public class GameManager : MonoBehaviour
     Timer gameTimeLimit;
 
 
+    [Header("GameOver Stuff")]
+    [SerializeField]
+    Image highScoreTag;
+
+
 
     private void OnEnable()
     {
@@ -44,6 +51,7 @@ public class GameManager : MonoBehaviour
         GameStateChange += GameStateChangeHandler;
         PlayerFeatures.OnPlayerDeath += OnPlayerDeathHandler;
         DeathZone.OnPlayerKilledInZone += OnPlayerKilledInZoneHandler;
+        Storage.OnHighScore += OnHighScoreHandler;
     }
 
     private void OnDisable()
@@ -53,6 +61,7 @@ public class GameManager : MonoBehaviour
         GameStateChange -= GameStateChangeHandler;
         PlayerFeatures.OnPlayerDeath -= OnPlayerDeathHandler;
         DeathZone.OnPlayerKilledInZone -= OnPlayerKilledInZoneHandler;
+        Storage.OnHighScore -= OnHighScoreHandler;
 
     }
 
@@ -80,30 +89,62 @@ public class GameManager : MonoBehaviour
     }
     void HandleIntroScreen()
     {
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        gameOverScreen.SetActive(false);
+        pausedScreen.SetActive(false);
         gamePlayScreen.SetActive(false);
         preStartScreen.SetActive(true);
     }
     void HandlePlayScreen()
     {
+        Cursor.visible = false;
+        // Locks the cursor
+        Cursor.lockState = CursorLockMode.Locked;
         preStartScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         pausedScreen.SetActive(false);
         gamePlayScreen.SetActive(true);
 
-
+        Time.timeScale = 1;
         scoreDisplay.SetText(String.Format("Score: {0}", score));
     }
     void HandleCutSceneScreen() { }
     void HandleEndingScreen() { }
     void HandleGameOverScreen() {
+        highScoreTag.gameObject.SetActive(false);
         gamePlayScreen.SetActive(false);
         preStartScreen.SetActive(false);
         pausedScreen.SetActive(false);
-        // Force of habit to stop all
+        Storage.SetHighscore(score);
         Time.timeScale = 0;
+        // Force of habit to stop all        
         gameOverScreen.SetActive(true);
 
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
+
+    void OnHighScoreHandler(int score)
+    {
+        highScoreTag.gameObject.SetActive(true);
+    }
+    #endregion
+
+    #region UI Button Action
+    public void StartResumeGamePlay()
+    {
+        GameStateChange?.Invoke(GameStates.Play);
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     #endregion
 
 
@@ -163,6 +204,8 @@ public class GameManager : MonoBehaviour
         // here we should put some special graphics to add some flair to the deaths
         GameStateChange?.Invoke(GameStates.GameOver);
     }
+
+    
 
 
     #endregion

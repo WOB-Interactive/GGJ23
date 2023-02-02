@@ -5,22 +5,15 @@ using UnityEngine;
 public class Storage : MonoBehaviour
 {
 
-    public static event Action<int> onHighScore;
+
+
+    public static event Action<int> OnHighScore; 
     private const string highscorePrefs = "highscore";
     private const string fxLevel = "fx";
     private const string bgLevel = "bg";
     private const string audioEndabled = "audio_on";
     private const string closedCaptionEnabled = "caption_on";
 
-    private void Awake()
-    {
-        onHighScore += OnValidateHighScore;
-    }
-
-    void OnValidateHighScore(int score)
-    {
-        Storage.SetHighscore(score);
-    }
 
     public static int GetHighScore()
     {
@@ -33,7 +26,7 @@ public class Storage : MonoBehaviour
         if (score > Storage.GetHighScore())
         {
             PlayerPrefs.SetInt(Storage.highscorePrefs, score);
-
+            OnHighScore?.Invoke(score);
         }
     }
 
