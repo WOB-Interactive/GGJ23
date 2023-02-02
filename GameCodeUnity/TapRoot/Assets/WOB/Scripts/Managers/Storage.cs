@@ -14,6 +14,8 @@ public class Storage : MonoBehaviour
     private const string audioEndabled = "audio_on";
     private const string closedCaptionEnabled = "caption_on";
 
+    private const string deathTrials = "deaths"; // todo simple track for how many deaths
+
 
     public static int GetHighScore()
     {

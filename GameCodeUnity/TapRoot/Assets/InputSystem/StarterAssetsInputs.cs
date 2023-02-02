@@ -10,6 +10,8 @@ namespace StarterAssets
 	{
 
 		public static event Action OnPausePressed;
+		public static event Action OnInteractPressed; // to add once ready
+		public static event Action OnActivatePower; // to add once ready
 
 		public bool canMove = false;
 

@@ -90,7 +90,7 @@ Day 3 Goals: (2/1/2023)
 - [ ] VFX - Screen Shake
 - [ ] Add Bird White Stork
 - [ ] Bugs Review
-    - [ ] Timer Not Starting on Play
+    - [X] Timer Not Starting on Play
 
 Day 4 Goals: (2/2/2023)
 - [ ] World Building (Design & FX)

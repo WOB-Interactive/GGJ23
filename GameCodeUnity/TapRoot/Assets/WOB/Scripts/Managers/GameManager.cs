@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         pausedScreen.SetActive(false);
         gamePlayScreen.SetActive(true);
-
+        gameTimeLimit.startTimer();
         Time.timeScale = 1;
         scoreDisplay.SetText(String.Format("Score: {0}", score));
     }
@@ -142,10 +142,14 @@ public class GameManager : MonoBehaviour
         gamePlayScreen.SetActive(false);
         preStartScreen.SetActive(false);
         pausedScreen.SetActive(false);
-        Storage.SetHighscore(score);
-        // Force of habit to stop all        
-        gameOverScreen.SetActive(true);
 
+
+
+        gameTimeLimit.stopTimer();
+
+        Storage.SetHighscore(score);       
+
+        gameOverScreen.SetActive(true);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -160,13 +164,14 @@ public class GameManager : MonoBehaviour
 
     public void OnPause(InputValue value)
     {
-        Debug.Log("dang");
         if (value.isPressed)
         {
             if (currentGameState == GameStates.Pause) {
                 GameStateChange?.Invoke(GameStates.Play);
+                gameTimeLimit.startTimer();
             } else { 
-                GameStateChange?.Invoke(GameStates.Pause); 
+                GameStateChange?.Invoke(GameStates.Pause);
+                gameTimeLimit.stopTimer();
             }
                 
         }
