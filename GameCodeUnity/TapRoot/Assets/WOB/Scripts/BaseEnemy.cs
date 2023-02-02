@@ -36,16 +36,21 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField]
     Collider scentArea;
 
+    bool canMove = false;
+
+
     private void OnEnable()
     {
         EnemyNear.ItemToFollow += OnItemToFollowHandler;
         Companion.CompanionDead += OnCompanionDeadHandler;
+        GameManager.GameStateChange += OnGameStateChangeHandler;
     }
 
     private void OnDisable()
     {
         EnemyNear.ItemToFollow -= OnItemToFollowHandler;
         Companion.CompanionDead -= OnCompanionDeadHandler;
+        GameManager.GameStateChange -= OnGameStateChangeHandler;
     }
 
     void OnItemToFollowHandler(Transform transform)
@@ -60,6 +65,21 @@ public class BaseEnemy : MonoBehaviour
         HandleIdle();
     }
 
+    void OnGameStateChangeHandler(GameStates state)
+    {
+        switch(state)
+        {
+            case GameStates.Play:
+                // MOVEABLE
+                canMove = true;
+                break;
+            default:
+                //not moving
+                canMove = false; 
+                break;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,14 +92,17 @@ public class BaseEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (currentState)
+        if (canMove)
         {
-            case EnemyStates.Following:
-                HandleFollowPlayer();
-                break;
-            case EnemyStates.Idle:
-                HandleIdle();
-                break;
+            switch (currentState)
+            {
+                case EnemyStates.Following:
+                    HandleFollowPlayer();
+                    break;
+                case EnemyStates.Idle:
+                    HandleIdle();
+                    break;
+            }
         }
     }
 

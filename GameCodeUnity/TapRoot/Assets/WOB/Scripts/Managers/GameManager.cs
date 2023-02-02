@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     [Header("UI Only")]
     [SerializeField] TMPro.TMP_Text scoreDisplay;
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject preStartScreen;
+    [SerializeField] GameObject pausedScreen;
+    [SerializeField] GameObject gamePlayScreen;
+
 
     [Header("Debug Only")]
     [SerializeField]
@@ -37,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         PIckupItem.OnItemPickup += OnItemPickupHandler;
         Timer.OnTimerExpired += OnTimerExpiredHandler;
-        GameManager.GameStateChange += GameStateChangeHandler;
+        GameStateChange += GameStateChangeHandler;
         PlayerFeatures.OnPlayerDeath += OnPlayerDeathHandler;
         DeathZone.OnPlayerKilledInZone += OnPlayerKilledInZoneHandler;
     }
@@ -46,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         PIckupItem.OnItemPickup -= OnItemPickupHandler;
         Timer.OnTimerExpired -= OnTimerExpiredHandler;
-        GameManager.GameStateChange -= GameStateChangeHandler;
+        GameStateChange -= GameStateChangeHandler;
         PlayerFeatures.OnPlayerDeath -= OnPlayerDeathHandler;
         DeathZone.OnPlayerKilledInZone -= OnPlayerKilledInZoneHandler;
 
@@ -58,19 +62,43 @@ public class GameManager : MonoBehaviour
         gameTimeLimit = GetComponent<Timer>();
     }
 
+    void ClearPanels() {
+        //pausedScreen.SetActive(false);
+        //preStartScreen.SetActive(false);
+    }
+
     #region Handlers For gamePlay
 
     void HandlePauseScreen()
     {
-
+        preStartScreen.SetActive(false);
+        gameOverScreen.SetActive(false);
+        gamePlayScreen.SetActive(false);
+        //Time.timeScale = 0; // Quick and dirty but if we wanted to animate the screen, I will need to do something different. Add listeners to Enemies, Hero and pickup Items. 
+        // this pattern will allow for ingame cutscenes
+        pausedScreen.SetActive(true);
     }
-    void HandleIntroScreen() { }
-    void HandlePlayScreen() {
+    void HandleIntroScreen()
+    {
+        gamePlayScreen.SetActive(false);
+        preStartScreen.SetActive(true);
+    }
+    void HandlePlayScreen()
+    {
+        preStartScreen.SetActive(false);
+        gameOverScreen.SetActive(false);
+        pausedScreen.SetActive(false);
+        gamePlayScreen.SetActive(true);
+
+
         scoreDisplay.SetText(String.Format("Score: {0}", score));
     }
     void HandleCutSceneScreen() { }
     void HandleEndingScreen() { }
     void HandleGameOverScreen() {
+        gamePlayScreen.SetActive(false);
+        preStartScreen.SetActive(false);
+        pausedScreen.SetActive(false);
         // Force of habit to stop all
         Time.timeScale = 0;
         gameOverScreen.SetActive(true);

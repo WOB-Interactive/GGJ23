@@ -61,6 +61,7 @@ public class Companion : MonoBehaviour
     NavMeshAgent meshAgent;
     bool isDead = false;
     bool searching = false;
+    bool canMove = false;
 
 
 
@@ -70,6 +71,7 @@ public class Companion : MonoBehaviour
         CompanionHealing += HandleCompanionHeal;
         SearchPower.EnemyFound += OnEnemyFound;
         SearchPower.ItemFound += OnItemFound;
+        GameManager.GameStateChange += OnGameStateChangeHandler;
 
 
     }
@@ -80,6 +82,24 @@ public class Companion : MonoBehaviour
         CompanionHealing -= HandleCompanionHeal;
         SearchPower.EnemyFound -= OnEnemyFound;
         SearchPower.ItemFound -= OnItemFound;
+        GameManager.GameStateChange -= OnGameStateChangeHandler;
+    }
+
+
+
+    void OnGameStateChangeHandler(GameStates state)
+    {
+        switch (state)
+        {
+            case GameStates.Play:
+                // MOVEABLE
+                canMove = true;
+                break;
+            default:
+                //not moving
+                canMove = false;
+                break;
+        }
     }
 
 
@@ -131,7 +151,7 @@ public class Companion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isDead)
+        if (!isDead && canMove)
         {
             switch (currentState)
             {

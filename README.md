@@ -57,15 +57,14 @@ Day 2 Goals: (1/31/2023)
 
 
 Day 3 Goals: (2/1/2023)
-
 - [ ] Game Mechanics
-    - [ ] Death Areas
-    - [ ] Companion     
-        - [ ] Noise Detection       
+    - [X] Death Areas
+    - [X] Companion     
+        - [X] Noise Detection       
      - [ ] Hide and Seek
      - [X] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
-     - [ ] Fall Damage Because of stronger Gravity in Planet.     
+     ~~- [ ] Fall Damage Because of stronger Gravity in Planet.     ~~
      - [ ] Collection/Collectables
      - [ ] Multiple Endings Based on %
        - [ ] Hidden Boss Battle (Harm or Trap win condition)
@@ -79,7 +78,7 @@ Day 3 Goals: (2/1/2023)
     - [ ] Completionist
     - [ ] Inventory
 - [ ] Game Manager
- - [ ] Game States 
+ - [/] Game States 
  - [ ] Event Handlers
 - [X] Companion States
 - [ ] Player States
