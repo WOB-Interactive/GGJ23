@@ -62,6 +62,7 @@ Day 3 Goals: (2/1/2023)
     - [X] Companion     
         - [X] Noise Detection       
      - [ ] Hide and Seek
+     - [ ] Lock and Key
      - [X] Enemy AI - Follow Target
      - [ ] "powers" - Invisible, SoundProof 
      ~~- [ ] Fall Damage Because of stronger Gravity in Planet.     ~~
@@ -69,6 +70,9 @@ Day 3 Goals: (2/1/2023)
      - [ ] Multiple Endings Based on %
        - [ ] Hidden Boss Battle (Harm or Trap win condition)
 - [ ] Game Controls
+    - [ ] Activate Search
+    - [ ] Interact With Item
+    - [ ]
 - [ ] Text Asset Images/Atlas (Visual)
 - [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]
 - [ ] Character Storage For Pickup Items (Visual)
@@ -78,7 +82,7 @@ Day 3 Goals: (2/1/2023)
     - [ ] Completionist
     - [ ] Inventory
 - [ ] Game Manager
- - [/] Game States 
+ - [X] Game States 
  - [ ] Event Handlers
 - [X] Companion States
 - [ ] Player States
@@ -86,6 +90,7 @@ Day 3 Goals: (2/1/2023)
 - [ ] VFX - Screen Shake
 - [ ] Add Bird White Stork
 - [ ] Bugs Review
+    - [ ] Timer Not Starting on Play
 
 Day 4 Goals: (2/2/2023)
 - [ ] World Building (Design & FX)

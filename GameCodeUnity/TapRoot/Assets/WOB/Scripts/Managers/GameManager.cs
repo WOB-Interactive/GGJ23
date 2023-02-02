@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
+#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+using UnityEngine.InputSystem;
+#endif
+
 public enum GameStates
 {
     Intro,
@@ -52,6 +56,7 @@ public class GameManager : MonoBehaviour
         PlayerFeatures.OnPlayerDeath += OnPlayerDeathHandler;
         DeathZone.OnPlayerKilledInZone += OnPlayerKilledInZoneHandler;
         Storage.OnHighScore += OnHighScoreHandler;
+        StarterAssets.StarterAssetsInputs.OnPausePressed += OnPausePressedHandler;
     }
 
     private void OnDisable()
@@ -62,6 +67,7 @@ public class GameManager : MonoBehaviour
         PlayerFeatures.OnPlayerDeath -= OnPlayerDeathHandler;
         DeathZone.OnPlayerKilledInZone -= OnPlayerKilledInZoneHandler;
         Storage.OnHighScore -= OnHighScoreHandler;
+        StarterAssets.StarterAssetsInputs.OnPausePressed -= OnPausePressedHandler;
 
     }
 
@@ -78,8 +84,26 @@ public class GameManager : MonoBehaviour
 
     #region Handlers For gamePlay
 
+    void OnPausePressedHandler()
+    {
+        switch(currentGameState)
+        {
+            case GameStates.Play:
+                GameStateChange(GameStates.Pause);
+                break;
+            case GameStates.Pause:
+                GameStateChange(GameStates.Play);
+                break;
+
+        }
+
+    }
+
     void HandlePauseScreen()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         preStartScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         gamePlayScreen.SetActive(false);
@@ -131,6 +155,24 @@ public class GameManager : MonoBehaviour
     {
         highScoreTag.gameObject.SetActive(true);
     }
+
+
+
+    public void OnPause(InputValue value)
+    {
+        Debug.Log("dang");
+        if (value.isPressed)
+        {
+            if (currentGameState == GameStates.Pause) {
+                GameStateChange?.Invoke(GameStates.Play);
+            } else { 
+                GameStateChange?.Invoke(GameStates.Pause); 
+            }
+                
+        }
+
+    }
+
     #endregion
 
     #region UI Button Action

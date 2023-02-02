@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -7,6 +8,8 @@ namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
+
+		public static event Action OnPausePressed;
 
 		public bool canMove = false;
 
@@ -22,6 +25,7 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		public bool paused;
 
 
         private void OnEnable()
@@ -90,10 +94,17 @@ namespace StarterAssets
 				SprintInput(value.isPressed);
 			}
 		}
+
+        public void OnPause(InputValue value)
+        {
+			paused = value.isPressed;
+			if (value.isPressed)
+				OnPausePressed?.Invoke();
+		}
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
