@@ -61,35 +61,34 @@ Day 3 Goals: (2/1/2023)
     - [X] Death Areas
     - [X] Companion     
         - [X] Noise Detection       
-     - [ ] Hide and Seek
-     - [ ] Lock and Key
+     ~~- [ ] Hide and Seek~~
+     ~~- [ ] Lock and Key~~
      - [X] Enemy AI - Follow Target
-     - [ ] "powers" - Invisible, SoundProof 
-     ~~- [ ] Fall Damage Because of stronger Gravity in Planet.     ~~
-     - [ ] Collection/Collectables
-     - [ ] Multiple Endings Based on %
-       - [ ] Hidden Boss Battle (Harm or Trap win condition)
-- [ ] Game Controls
-    - [ ] Activate Search
-    - [ ] Interact With Item
-    - [ ]
-- [ ] Text Asset Images/Atlas (Visual)
-- [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]
-- [ ] Character Storage For Pickup Items (Visual)
-- [ ] Local Storage 
-    - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
-    - [ ] Time To Complete
-    - [ ] Completionist
-    - [ ] Inventory
+     ~~- [ ] "powers" - Invisible, SoundProof ~~
+     ~~- [ ] Fall Damage Because of stronger Gravity in Planet.     ~~ [hardcut]
+     ~~- [ ] Collection/Collectables~~
+     ~~- [ ] Multiple Endings Based on %~~
+       ~~- [ ] Hidden Boss Battle (Harm or Trap win condition)~~
+~~- [ ] Game Controls~~
+    ~~- [ ] Activate Search~~
+    ~~- [ ] Interact With Item~~    
+~~- [ ] Text Asset Images/Atlas (Visual)~~
+~~- [ ] Character Damage (Audio + Visual FX) [Believe not to reqiure this due to the three strikes process]~~ [hardcut]
+~~- [ ] Character Storage For Pickup Items (Visual)~~
+~~- [ ] Local Storage ~~
+    ~~- [ ] Last Location (Adding a location area save just in case I get in a deep groove )~~
+    ~~- [ ] Time To Complete~~
+    ~~- [ ] Completionist~~
+    ~~- [ ] Inventory~~
 - [ ] Game Manager
  - [X] Game States 
- - [ ] Event Handlers
+ ~~- [ ] Event Handlers~~
 - [X] Companion States
-- [ ] Player States
-- [ ] Web Build
-- [ ] VFX - Screen Shake
-- [ ] Add Bird White Stork
-- [ ] Bugs Review
+~~- [ ] Player States~~
+- [X] Web Build (https://webofblood.itch.io/taproot)    
+~~- [ ] VFX - Screen Shake~~
+~~- [ ] Add Bird White Stork~~
+- [X] Bugs Review
     - [X] Timer Not Starting on Play
 
 Day 4 Goals: (2/2/2023)
@@ -99,7 +98,29 @@ Day 4 Goals: (2/2/2023)
 - [ ] Blender Motion Capture
 - [ ] Visual Story
 - [ ] Main BG Audio
-- [ ] Web Build
+- [ ] Game Mechanics    
+     - [ ] Hide and Seek [HardCut?]
+     - [ ] Lock and Key
+     - [ ] "powers" - Invisible, SoundProof [HardCut?]
+     - [ ] Collection/Collectables
+     - [ ] Multiple Endings Based on %
+       - [ ] Hidden Boss Battle (Harm or Trap win condition)
+- [ ] Game Controls
+    - [ ] Activate Search
+    - [ ] Interact With Item
+- [ ] Text Asset Images/Atlas (Visual)
+- [ ] Character Storage For Pickup Items (Visual & Mechanic)
+- [ ] Local Storage 
+    - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
+    - [ ] Time To Complete
+    - [ ] Completionist
+    - [ ] Inventory
+- [ ] Game Manager
+- [ ] Event Handlers [managing new events]
+- [ ] Player States
+- [ ] VFX - Screen Shake [when damage taken]
+- [ ] Add Bird White Stork [HardCut]
+- [ ] Web Build (https://webofblood.itch.io/taproot)    
 - [ ] Bugs Review
 
 Day 5 Goals: (2/3/2023)

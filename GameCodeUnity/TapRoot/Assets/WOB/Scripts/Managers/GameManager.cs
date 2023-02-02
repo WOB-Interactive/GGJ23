@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
 
     void HandlePauseScreen()
     {
+        gameTimeLimit.stopTimer();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
@@ -113,7 +114,6 @@ public class GameManager : MonoBehaviour
     }
     void HandleIntroScreen()
     {
-
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
@@ -142,9 +142,6 @@ public class GameManager : MonoBehaviour
         gamePlayScreen.SetActive(false);
         preStartScreen.SetActive(false);
         pausedScreen.SetActive(false);
-
-
-
         gameTimeLimit.stopTimer();
 
         Storage.SetHighscore(score);       
@@ -159,24 +156,7 @@ public class GameManager : MonoBehaviour
     {
         highScoreTag.gameObject.SetActive(true);
     }
-
-
-
-    public void OnPause(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            if (currentGameState == GameStates.Pause) {
-                GameStateChange?.Invoke(GameStates.Play);
-                gameTimeLimit.startTimer();
-            } else { 
-                GameStateChange?.Invoke(GameStates.Pause);
-                gameTimeLimit.stopTimer();
-            }
-                
-        }
-
-    }
+   
 
     #endregion
 

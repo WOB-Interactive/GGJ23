@@ -247,9 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c26dd9467d74c4283bdbb66f122505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTimeLimit: 5
-  timelimit: 5
-  timeRemaining: 0
+  defaultTimeLimit: 500
+  timelimit: 500
+  timeRemaining: 500
   timerRunning: 0
   shouldCountDown: 1
   TimeLimitTextDisplay: {fileID: 2063381046}

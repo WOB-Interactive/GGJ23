@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour
         OnTimerPaused?.Invoke();
 
 #if UNITY_EDITOR
-        Debug.Log(string.Format("{0} Paused {1}", this.name, timeRemaining));
+      //  Debug.Log(string.Format("{0} Paused {1}", this.name, timeRemaining));
 #endif
     }
 
@@ -50,7 +50,7 @@ public class Timer : MonoBehaviour
         timerRunning = true;
         OnTimerStarted?.Invoke();
 #if UNITY_EDITOR
-        Debug.Log(string.Format("{0} Started {1}", this.name, timeRemaining));
+       // Debug.Log(string.Format("{0} Started {1}", this.name, timeRemaining));
 #endif
     }
 
@@ -72,7 +72,7 @@ public class Timer : MonoBehaviour
         OnTimerRestarted?.Invoke();
 
 #if UNITY_EDITOR
-        Debug.Log(string.Format("{0} Restarted: {1}", this.name, timelimit));
+        //Debug.Log(string.Format("{0} Restarted: {1}", this.name, timelimit));
 #endif
     }
 
