@@ -42,9 +42,10 @@ public class CompanionNotification : MonoBehaviour
         SearchPower.ItemFound -= OnItemFound;
     }
 
-    void OnItemFound()
+    void OnItemFound(PIckupItem item)
     {
         NotifyHandler(itemFound);
+        // here we can add an Improved power up to allow details about how many items found OR which specific Item. 
     }
 
     void OnEnemyNear(int level)

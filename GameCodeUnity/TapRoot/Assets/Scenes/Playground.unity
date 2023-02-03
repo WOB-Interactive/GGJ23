@@ -463,26 +463,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373357537}
   m_CullTransparentMesh: 1
---- !u!1 &376746922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2407985232417455281, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-    type: 3}
-  m_PrefabInstance: {fileID: 2095880046}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &376746925
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376746922}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &468512842
 GameObject:
   m_ObjectHideFlags: 0
@@ -8780,6 +8760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1706333002, guid: dde5e75cbd5c47a4b9d97338e4b8abde, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2407985232417455280, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
         type: 3}
       propertyPath: m_RootOrder
@@ -8839,36 +8823,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407985232417455281, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407985232417455281, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407985232674078112, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407985232984122737, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2442344581613614350, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-        type: 3}
-      propertyPath: pickupSoundFX
-      value: PopLarge
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222430493387986661, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde5e75cbd5c47a4b9d97338e4b8abde, type: 3}
@@ -9167,13 +9121,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3556224183035646308, guid: b8a0023c41d6fb14cb486c3aeff4419a,
         type: 3}
+      propertyPath: hurtVfX
+      value: 
+      objectReference: {fileID: 1418544122}
+    - target: {fileID: 3556224183035646308, guid: b8a0023c41d6fb14cb486c3aeff4419a,
+        type: 3}
       propertyPath: playerLoc
       value: 
       objectReference: {fileID: 541602773}
     - target: {fileID: 3556224183035646308, guid: b8a0023c41d6fb14cb486c3aeff4419a,
         type: 3}
       propertyPath: currentState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3556224183035646309, guid: b8a0023c41d6fb14cb486c3aeff4419a,
         type: 3}

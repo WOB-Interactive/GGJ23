@@ -119,12 +119,13 @@ public class Companion : MonoBehaviour
         HandleHeal(amount);
     }
 
-    void OnItemFound()
+    void OnItemFound(PIckupItem item)
     {
         searching = false;
+        item.OnItemFoundHandler();
     }
 
-    void OnEnemyFound()
+    void OnEnemyFound(BaseEnemy enemy)
     {
         HandleEnemyNear(1);
         searching = false;

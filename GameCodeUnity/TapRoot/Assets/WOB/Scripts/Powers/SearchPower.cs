@@ -5,8 +5,8 @@ using System;
 
 public class SearchPower : MonoBehaviour
 {
-    public static event Action ItemFound;
-    public static event Action EnemyFound;
+    public static event Action<PIckupItem> ItemFound;
+    public static event Action<BaseEnemy> EnemyFound;
     
 
     [SerializeField]
@@ -88,20 +88,6 @@ public class SearchPower : MonoBehaviour
 
 
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 1);
-
-        foreach (Vector3 targetItem in target)
-        {
-            // Draws a blue line from this transform to the target
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(transform.position, targetItem);
-        }
-    }
-
-
     void SearchDirection(Vector3 direction)
     {
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, 2, direction, scanRadius, LayerMask.NameToLayer("Item") ,QueryTriggerInteraction.Collide );
@@ -111,14 +97,14 @@ public class SearchPower : MonoBehaviour
             foreach(RaycastHit hit in hits)
             {
                 target.Add(hit.collider.gameObject.transform.position);
-                if (hit.collider.gameObject.GetComponent<PIckupItem>())
+                if (hit.collider.gameObject.GetComponent<PIckupItem>()) // <- revert to compare tag to reduce look up
                 {
-                    ItemFound?.Invoke();
+                    ItemFound?.Invoke(hit.collider.gameObject.GetComponent<PIckupItem>());
                 }
 
                 if(hit.collider.gameObject.CompareTag("Enemy"))
                 {
-                    EnemyFound?.Invoke();
+                    EnemyFound?.Invoke(hit.collider.gameObject.GetComponent<BaseEnemy>());
                 }
             }
         }

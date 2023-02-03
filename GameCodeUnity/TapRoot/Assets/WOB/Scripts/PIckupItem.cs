@@ -22,12 +22,29 @@ public class PIckupItem : MonoBehaviour
 
     [SerializeField]
     GameObject itemModelAssetLocation;
+    [SerializeField]
+    GameObject ItemFoundFX;
+    [SerializeField]
+    [Range(5f, 60f)]
+    float itemFoundTimeLimit = 10f;
 
 
     private void Awake()
     {
         Instantiate(item.PickupItemPrefab, itemModelAssetLocation.transform);
         PickupItemElement.PickedUp += HandlePickup;
+    }
+
+    public void OnItemFoundHandler()
+    {
+        ItemFoundFX.SetActive(true);
+        StartCoroutine("ClearItemFound");
+    }
+
+    IEnumerator ClearItemFound()
+    {
+        yield return new WaitForSeconds(itemFoundTimeLimit);
+        ItemFoundFX.SetActive(false);
     }
 
     public void HandlePickup()
@@ -41,8 +58,6 @@ public class PIckupItem : MonoBehaviour
         }       
         
         Destroy(gameObject, objectDestroyLifetime);
-        
-
     }
 
 }
