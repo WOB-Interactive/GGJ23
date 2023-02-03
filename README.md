@@ -125,8 +125,8 @@ Day 4 Goals: (2/2/2023)
                 - [X] Improve Spreed
                 - [ ] Adjust Scan Animation
                 - [X] Bind Scan to button action
-        - [ ] Add Day/night Cycle
-        - [ ] Add Fog
+        - [X] Add Day/night Cycle
+        - [X] Add Fog
         - [ ] Add Base Graphics
         - [ ] UI Update
             - [ ] Pause Menu 
