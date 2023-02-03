@@ -14,6 +14,7 @@ public class Storage : MonoBehaviour
     private const string audioEndabled = "audio_on";
     private const string closedCaptionEnabled = "caption_on";
 
+    private const string daysSearchings = "Days Searching";
     private const string deathTrials = "deaths"; // todo simple track for how many deaths
 
 
@@ -74,6 +75,21 @@ public class Storage : MonoBehaviour
     public static void ResetHighScore()
     {
         PlayerPrefs.SetInt(Storage.highscorePrefs, 10000);
+    }
+
+    public static void ResetDaysSearch()
+    {
+        PlayerPrefs.SetInt(Storage.daysSearchings, 0);
+    }
+
+    public static int GetDaysSearching()
+    {
+        return PlayerPrefs.GetInt(Storage.daysSearchings, 0);
+    }
+
+    public static void AddDaysSearching(int cnt)
+    {
+        PlayerPrefs.SetInt(Storage.daysSearchings, GetDaysSearching() + cnt);
     }
 
 

@@ -10,6 +10,7 @@ public class CompanionNotification : MonoBehaviour
     float notificationDisplayTime = 5f;
     [SerializeField]
     Image notificationImage;
+    
 
     Animator animator;
     [SerializeField]
@@ -25,6 +26,9 @@ public class CompanionNotification : MonoBehaviour
     Sprite Level2EnemyWarning;
 
     [SerializeField]
+    Sprite fullDayBackHomeImage;
+
+    [SerializeField]
     Camera targetPlayer;
 
     private void Start()
@@ -37,18 +41,25 @@ public class CompanionNotification : MonoBehaviour
     {
         Companion.EnemyNear += OnEnemyNear;
         SearchPower.ItemFound += OnItemFound;
+        DayNightTracker.OnFullDayCycleComplete += OnFullDayCycleCompleteHandler;
     }
 
     private void OnDisable()
     {
         Companion.EnemyNear -= OnEnemyNear;
         SearchPower.ItemFound -= OnItemFound;
+        DayNightTracker.OnFullDayCycleComplete -= OnFullDayCycleCompleteHandler;
     }
 
     void OnItemFound(PIckupItem item)
     {
         NotifyHandler(itemFound);
         // here we can add an Improved power up to allow details about how many items found OR which specific Item. 
+    }
+
+    void OnFullDayCycleCompleteHandler()
+    {
+        NotifyHandler(fullDayBackHomeImage);
     }
 
     void OnEnemyNear(int level)
