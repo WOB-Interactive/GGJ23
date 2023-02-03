@@ -92,12 +92,12 @@ Day 3 Goals: (2/1/2023)
     - [X] Timer Not Starting on Play
 
 Day 4 Goals: (2/2/2023)
-- [ ] World Building (Design & FX)
-- [ ] 2D Assets
-- [ ] 3D Assets
-- [ ] Blender Motion Capture
-- [ ] Visual Story
-- [ ] Main BG Audio
+- [ ] VFX 
+    - [ ] Screen Shake [when damage taken]
+    - [ ] Dirt
+    - [ ] smoke
+    - [ ] Item Glow
+    - [X] Damage Taken
 - [ ] Game Mechanics    
      - [ ] Hide and Seek [HardCut?]
      - [ ] Lock and Key
@@ -108,22 +108,99 @@ Day 4 Goals: (2/2/2023)
 - [ ] Game Controls
     - [ ] Activate Search
     - [ ] Interact With Item
-- [ ] Text Asset Images/Atlas (Visual)
 - [ ] Character Storage For Pickup Items (Visual & Mechanic)
 - [ ] Local Storage 
-    - [ ] Last Location (Adding a location area save just in case I get in a deep groove )
+    ~~- [ ] Last Location (Adding a location area save just in case I get in a deep groove )~~ [HardCut]
     - [ ] Time To Complete
     - [ ] Completionist
     - [ ] Inventory
 - [ ] Game Manager
 - [ ] Event Handlers [managing new events]
 - [ ] Player States
-- [ ] VFX - Screen Shake [when damage taken]
 - [ ] Add Bird White Stork [HardCut]
 - [ ] Web Build (https://webofblood.itch.io/taproot)    
 - [ ] Bugs Review
+    - [ ] Sample Build Requirements
+        - [ ] Companion 
+                - [ ] Improve Spreed
+                - [ ] Adjust Scan Animation
+                - [ ] Bind Scan to button action
+        - [ ] Add Day/night Cycle
+        - [ ] Add Fog
+        - [ ] Add Base Graphics
+        - [ ] UI Update
+            - [ ] Pause Menu 
+                - [ ] Inventory Display
+            - [ ] Game Over
+                - [ ] Final Time Display
+                - [ ] High Score Display
+                - [ ] Total Death Count Display 
+            - [ ] Pre Start
+                - [ ] Game Completion Instructions
+                    - [ ] Image only
+            - [ ] Game Play
+                - [ ] Score
+                - [ ] Elapsed time
+                - [ ] Damange Taken Notification
+                - [ ] Companion Death Notification
+                - [ ] Companion Notification
+                    - [ ] Item Near
+                    - [ ] Enemy Near
+            - [ ] Closed Caption
+
+            
+            
 
 Day 5 Goals: (2/3/2023)
+
+- [ ] Blender Motion Capture
+- [ ] World Building (Design & FX)
+
+- [ ] Text Asset Images/Atlas (Visual)
+- [ ] 2D Assets
+    - [ ] title
+    - [ ] player
+    - [ ] companion
+    - [ ] enemy Alert
+    - [ ] Item Alert
+    - [ ] pickup 1
+    - [ ] pickup 2
+    - [ ] pickup 3
+    - [ ] pickup 4
+    - [ ] TMP Pro Custom Font
+    - [ ] Player HomeFamily    
+        - [ ] Completion associations (special items)
+- [ ] 3D Assets
+    - [ ] Player
+    - [ ] Companion
+    - [ ] Enemy 1
+    - [ ] Boss 1
+    - [ ] Enemy 2 
+    - [ ] pickup 1
+    - [ ] pickup 2
+    - [ ] pickup 3
+    - [ ] pickup 4
+    - [ ] Grass
+    - [ ] Dirt Patch
+    - [ ] trees
+    - [ ] rocks
+    - [ ] spaceship
+    - [ ] Special Items
+        - [ ] glasses
+        - [ ] hat
+        - [ ] gloves
+        - [ ] gem 1
+        - [ ] gem 2
+        - [ ] gem 3
+- [ ] Visual Story
+- [ ] Main BG Audio
+
+- [ ] VFX 
+    - [ ] Screen Shake [when damage taken]
+    - [ ] Dirt
+    - [ ] smoke
+    - [ ] Item Glow
+    - [X] Damage Taken
 - [ ] Web Build
 - [ ] Bugs Review
 

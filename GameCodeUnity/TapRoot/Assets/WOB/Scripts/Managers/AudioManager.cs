@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] Sound[] sounds;
 
     bool soundEnabled = true;
+
+    
     void Awake()
     {
         if (instance == null)
@@ -71,8 +73,11 @@ public class AudioManager : MonoBehaviour
                     {
                         sounds[i].Play(fxAudioVolume);
                     }
-                    
-                    closedCaption.Invoke(sounds[i].caption);
+
+                    if (Storage.GetClosedCaptionEnabled())
+                    {
+                        closedCaption?.Invoke(sounds[i].caption);
+                    }
                 }
 
                 return;

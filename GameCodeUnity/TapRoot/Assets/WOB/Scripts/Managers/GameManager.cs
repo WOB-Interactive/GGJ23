@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     int score = 0;
     int threatLevel = 0;
+    bool ccEnabled = true;
     public static event Action<GameStates> GameStateChange;
 
 
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject preStartScreen;
     [SerializeField] GameObject pausedScreen;
     [SerializeField] GameObject gamePlayScreen;
+    [SerializeField] Button closedCaptionButton;
 
 
     [Header("Debug Only")]
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameTimeLimit = GetComponent<Timer>();
+        ccEnabled = Storage.GetClosedCaptionEnabled();
     }
 
     void ClearPanels() {
@@ -170,6 +173,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    #region PauseMenu
+    public void ToggleClosedCaption()
+    {
+        ccEnabled = !ccEnabled;
+        Storage.SetClosedCaptionEnabled(ccEnabled);
+        closedCaptionButton.GetComponentInChildren<TMPro.TMP_Text>().SetText("[cc] - off");
+    }
+
+    #endregion
 
     #endregion
 

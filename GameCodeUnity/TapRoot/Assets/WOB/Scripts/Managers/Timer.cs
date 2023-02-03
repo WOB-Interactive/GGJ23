@@ -7,6 +7,11 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
 
+    /// <summary>
+    /// Large room for improvement here we need to be able source out the timer
+    /// so that only specific reactions accur on timeout
+    /// </summary>
+
     public static event Action OnTimerExpired;
     public static event Action OnTimerPaused;
     public static event Action OnTimerStarted;

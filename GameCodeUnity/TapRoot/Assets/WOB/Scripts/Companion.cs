@@ -56,6 +56,10 @@ public class Companion : MonoBehaviour
     [SerializeField]
     string deathSoundFX;
 
+    [Header("VFX")]
+    [SerializeField]
+    ParticleSystem hurtVfX;
+
 
     Animator companionAnimation;
     NavMeshAgent meshAgent;
@@ -251,6 +255,7 @@ public class Companion : MonoBehaviour
 
         //todo Apply Animation
         //companionAnimation?.SetTrigger("Hurt");
+        hurtVfX?.Play();
         //Todo Apply Sound FX
         AudioManager.instance.PlaySound(hurtSoundFX);
 
