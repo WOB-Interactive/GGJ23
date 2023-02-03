@@ -142,15 +142,15 @@ Day 4 Goals: (2/2/2023)
                 - [ ] Score
                 - [ ] Elapsed time
                 - [ ] Damange Taken Notification
-                         - [ ] Closed Caption Needed
+                         - [x] Closed Caption Needed
                 - [ ] Companion Death Notification
-                         - [ ] Closed Caption Needed
-                - [] Companion Notification
+                         - [x] Closed Caption Needed
+                - [x] Companion Notification
                     - [X] Item Near
-                         - [ ] Closed Caption Needed
+                         - [x] Closed Caption Needed
                     - [X] Enemy Near
-                         - [ ] Closed Caption Needed
-            - [ ] Closed Caption
+                         - [x] Closed Caption Needed
+            - [X] Closed Caption 
             
             
 
