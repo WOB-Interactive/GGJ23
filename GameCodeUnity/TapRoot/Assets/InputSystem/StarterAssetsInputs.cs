@@ -27,7 +27,11 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+
+
+		[Header("Custom Settings")]
 		public bool paused;
+		public bool powerActivate;
 
 
         private void OnEnable()
@@ -102,6 +106,13 @@ namespace StarterAssets
 			paused = value.isPressed;
 			if (value.isPressed)
 				OnPausePressed?.Invoke();
+		}
+
+		public void OnPowersActivate(InputValue value)
+        {
+			powerActivate = value.isPressed;
+			if (value.isPressed)
+				OnActivatePower?.Invoke();
 		}
 #endif
 

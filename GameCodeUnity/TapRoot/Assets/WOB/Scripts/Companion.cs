@@ -76,8 +76,7 @@ public class Companion : MonoBehaviour
         SearchPower.EnemyFound += OnEnemyFound;
         SearchPower.ItemFound += OnItemFound;
         GameManager.GameStateChange += OnGameStateChangeHandler;
-
-
+        StarterAssets.StarterAssetsInputs.OnActivatePower += OnPowersActivationHandler;
     }
 
     private void OnDisable()
@@ -87,6 +86,7 @@ public class Companion : MonoBehaviour
         SearchPower.EnemyFound -= OnEnemyFound;
         SearchPower.ItemFound -= OnItemFound;
         GameManager.GameStateChange -= OnGameStateChangeHandler;
+        StarterAssets.StarterAssetsInputs.OnActivatePower -= OnPowersActivationHandler;
     }
 
 
@@ -131,6 +131,12 @@ public class Companion : MonoBehaviour
         searching = false;
     }
 
+    void OnPowersActivationHandler()
+    {
+        currentState = CompanionStates.Find_Pickup;
+        HandleFindPickup();
+    }
+
     void HandleEnemyNear(int level)
     {
         if (level > 1)
@@ -149,23 +155,21 @@ public class Companion : MonoBehaviour
     {
         //companionAnimation = GetComponent<Animator>();
         meshAgent = GetComponent<NavMeshAgent>();
+        meshAgent.speed = speed;
     }
 
     #region Companion State Handler
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!isDead && canMove)
         {
             switch (currentState)
             {
                 case CompanionStates.Following:
-                    HandleFollowPlayer();
-                    ListenForEnemies();
-                    break;
-                case CompanionStates.Find_Pickup:
-                    HandleFindPickup();
+                    HandleFollowPlayer(); // this will continually adjust for current player location - posibility for future optimization
+                    ListenForEnemies(); // not implemented 
                     break;
             }
         }

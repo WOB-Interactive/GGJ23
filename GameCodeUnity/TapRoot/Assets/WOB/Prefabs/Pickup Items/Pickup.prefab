@@ -192,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706333003
 Transform:
   m_ObjectHideFlags: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 5f97137bdd3572744bb6b76621d1248b, type: 2}
   itemModelAssetLocation: {fileID: 5222430493387986661}
   ItemFoundFX: {fileID: 1706333002}
+  itemFoundTimeLimit: 10
 --- !u!136 &376746925
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -24,6 +24,9 @@ public class CompanionNotification : MonoBehaviour
     [SerializeField]
     Sprite Level2EnemyWarning;
 
+    [SerializeField]
+    Camera targetPlayer;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -64,6 +67,7 @@ public class CompanionNotification : MonoBehaviour
 
     public void NotifyHandler(Sprite imageToDisplay)
     {
+        transform.LookAt(targetPlayer.transform);
         displayNotification = true;
         notificationImage.sprite = imageToDisplay;
         animator.SetBool("Notify", displayNotification);

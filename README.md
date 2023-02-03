@@ -96,7 +96,7 @@ Day 4 Goals: (2/2/2023)
     - [ ] Screen Shake [when damage taken]
     - [ ] Dirt
     - [ ] smoke
-    - [ ] Item Glow
+    - [X] Item Glow 
     - [X] Damage Taken
 - [ ] Game Mechanics    
      - [ ] Hide and Seek [HardCut?]
@@ -106,7 +106,7 @@ Day 4 Goals: (2/2/2023)
      - [ ] Multiple Endings Based on %
        - [ ] Hidden Boss Battle (Harm or Trap win condition)
 - [ ] Game Controls
-    - [ ] Activate Search
+    - [X] Activate Search
     - [ ] Interact With Item
 - [ ] Character Storage For Pickup Items (Visual & Mechanic)
 - [ ] Local Storage 
@@ -117,14 +117,14 @@ Day 4 Goals: (2/2/2023)
 - [ ] Game Manager
 - [ ] Event Handlers [managing new events]
 - [ ] Player States
-- [ ] Add Bird White Stork [HardCut]
+- [ ] Add Bird White Stork [HardCut?]
 - [ ] Web Build (https://webofblood.itch.io/taproot)    
 - [ ] Bugs Review
     - [ ] Sample Build Requirements
         - [ ] Companion 
-                - [ ] Improve Spreed
+                - [X] Improve Spreed
                 - [ ] Adjust Scan Animation
-                - [ ] Bind Scan to button action
+                - [X] Bind Scan to button action
         - [ ] Add Day/night Cycle
         - [ ] Add Fog
         - [ ] Add Base Graphics
@@ -136,18 +136,21 @@ Day 4 Goals: (2/2/2023)
                 - [ ] High Score Display
                 - [ ] Total Death Count Display 
             - [ ] Pre Start
-                - [ ] Game Completion Instructions
+                - [ ] GamePlay & Completion Instructions
                     - [ ] Image only
             - [ ] Game Play
                 - [ ] Score
                 - [ ] Elapsed time
                 - [ ] Damange Taken Notification
+                         - [ ] Closed Caption Needed
                 - [ ] Companion Death Notification
-                - [ ] Companion Notification
-                    - [ ] Item Near
-                    - [ ] Enemy Near
+                         - [ ] Closed Caption Needed
+                - [] Companion Notification
+                    - [X] Item Near
+                         - [ ] Closed Caption Needed
+                    - [X] Enemy Near
+                         - [ ] Closed Caption Needed
             - [ ] Closed Caption
-
             
             
 
