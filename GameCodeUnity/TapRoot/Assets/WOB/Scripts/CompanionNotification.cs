@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CompanionNotification : MonoBehaviour
 {
+    public static event Action<string> ShowClosedCaption;
+
     [SerializeField]
     [Range(1.5f, 30f)]
     float notificationDisplayTime = 5f;
@@ -29,7 +31,7 @@ public class CompanionNotification : MonoBehaviour
     Sprite fullDayBackHomeImage;
 
     [SerializeField]
-    Camera targetPlayer;
+    GameObject targetPlayer;
 
     private void Start()
     {
@@ -55,15 +57,25 @@ public class CompanionNotification : MonoBehaviour
     {
         NotifyHandler(itemFound);
         // here we can add an Improved power up to allow details about how many items found OR which specific Item. 
+        ShowClosedCaption?.Invoke("[Companion]: There's an Item near by");
+    }
+
+    private void Update()
+    {
+
+        transform.LookAt(targetPlayer.transform);
     }
 
     void OnFullDayCycleCompleteHandler()
     {
         NotifyHandler(fullDayBackHomeImage);
+        ShowClosedCaption?.Invoke("[Companion]: Wow That's a day back home");
     }
 
     void OnEnemyNear(int level)
     {
+
+        ShowClosedCaption?.Invoke("[Companion]: There's an enemy near by");
         switch (level)
         {
             case 1:

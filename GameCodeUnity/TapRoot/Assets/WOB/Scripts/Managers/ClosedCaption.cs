@@ -13,13 +13,22 @@ public class ClosedCaption : MonoBehaviour
 
     private void OnEnable()
     {
-        AudioManager.closedCaption += DisplayCaption;        
-    }
+        AudioManager.closedCaption += DisplayCaption;
+        CompanionNotification.ShowClosedCaption += DisplayCaption;
+
+
+        Companion.CompanionHurt += DisplayHurtCaption;
+        Companion.CompanionDead += DisplayDeadCaption;
+}
 
     private void OnDisable()
     {
         AudioManager.closedCaption -= DisplayCaption;
+        CompanionNotification.ShowClosedCaption -= DisplayCaption;
+        Companion.CompanionHurt -= DisplayHurtCaption;
+        Companion.CompanionDead -= DisplayDeadCaption;
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,4 +67,11 @@ public class ClosedCaption : MonoBehaviour
 
         Reset();
     }
+
+    #region event handlers
+
+
+    void DisplayHurtCaption(int val) { DisplayCaption("[Companion]: ouch!"); }
+    void DisplayDeadCaption() { DisplayCaption("[Companion]: I'll miss you"); }
+    #endregion
 }

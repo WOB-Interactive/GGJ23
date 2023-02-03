@@ -13,7 +13,7 @@ Material:
   - _EMISSION
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -112,7 +112,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.9169128, g: 0.9339623, b: 0.6123621, a: 0.54509807}
     - _Color: {r: 0.9169128, g: 0.9339623, b: 0.6123621, a: 0.54509807}
-    - _EmissionColor: {r: 1.6470588, g: 1.7098039, b: 0.6666667, a: 1}
+    - _EmissionColor: {r: 1.638189, g: 1.6829482, b: 0.9130889, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8725378581446274398
