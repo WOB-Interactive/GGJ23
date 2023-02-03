@@ -92,58 +92,58 @@ Day 3 Goals: (2/1/2023)
     - [X] Timer Not Starting on Play
 
 Day 4 Goals: (2/2/2023)
-- [ ] VFX 
-    - [ ] Screen Shake [when damage taken]
-    - [ ] Dirt
-    - [ ] smoke
+~~- [ ] VFX ~~
+    ~~- [ ] Screen Shake [when damage taken]~~
+    ~~- [ ] Dirt~~
+    ~~- [ ] smokev
     - [X] Item Glow 
     - [X] Damage Taken
-- [ ] Game Mechanics    
+~~- [ ] Game Mechanics    ~~
      - [ ] Hide and Seek [HardCut?]
-     - [ ] Lock and Key
+     ~~- [ ] Lock and Key~~
      - [ ] "powers" - Invisible, SoundProof [HardCut?]
-     - [ ] Collection/Collectables
-     - [ ] Multiple Endings Based on %
-       - [ ] Hidden Boss Battle (Harm or Trap win condition)
+     ~~- [ ] Collection/Collectables~~
+     ~~- [ ] Multiple Endings Based on %~~
+       ~~- [ ] Hidden Boss Battle (Harm or Trap win condition)~~
 - [ ] Game Controls
     - [X] Activate Search
-    - [ ] Interact With Item
-- [ ] Character Storage For Pickup Items (Visual & Mechanic)
-- [ ] Local Storage 
+    - [X] Interact With Item
+~~- [ ] Character Storage For Pickup Items (Visual & Mechanic)~~
+~~- [ ] Local Storage ~~
     ~~- [ ] Last Location (Adding a location area save just in case I get in a deep groove )~~ [HardCut]
-    - [ ] Time To Complete
-    - [ ] Completionist
-    - [ ] Inventory
-- [ ] Game Manager
-- [ ] Event Handlers [managing new events]
-- [ ] Player States
-- [ ] Add Bird White Stork [HardCut?]
+  ~~  - [ ] Time To Complete~~
+~~    - [ ] Completionist~~
+~~    - [ ] Inventory~~
+~~- [ ] Game Manager~~
+~~- [ ] Event Handlers [managing new events]~~
+~~- [ ] Player States~~
+~~- [ ] Add Bird White Stork~~ [HardCut?]
 - [ ] Web Build (https://webofblood.itch.io/taproot)    
-- [ ] Bugs Review
+~~- [ ] Bugs Review~~
     - [ ] Sample Build Requirements
-        - [ ] Companion 
+     ~~   - [ ] Companion ~~
                 - [X] Improve Spreed
-                - [ ] Adjust Scan Animation
+                ~~- [ ] Adjust Scan Animation~~
                 - [X] Bind Scan to button action
         - [X] Add Day/night Cycle
         - [X] Add Fog
-        - [ ] Add Base Graphics
-        - [ ] UI Update
-            - [ ] Pause Menu 
-                - [ ] Inventory Display
-            - [ ] Game Over
-                - [ ] Final Time Display
-                - [ ] High Score Display
-                - [ ] Total Death Count Display 
-            - [ ] Pre Start
-                - [ ] GamePlay & Completion Instructions
-                    - [ ] Image only
-            - [ ] Game Play
-                - [ ] Score
-                - [ ] Elapsed time
-                - [ ] Damange Taken Notification
+        ~~- [ ] Add Base Graphics~~
+        ~~- [ ] UI Update~~
+            ~~- [ ] Pause Menu ~~
+                ~~- [ ] Inventory Display~~
+            ~~- [ ] Game Over~~
+                ~~- [ ] Final Time Display~~
+                ~~- [ ] High Score Display~~
+                ~~- [ ] Total Death Count Display ~~
+            ~~- [ ] Pre Start~~
+                ~~- [ ] GamePlay & Completion Instructions~~
+                    ~~- [ ] Image only~~
+            ~~- [ ] Game Play~~
+                ~~- [ ] Score~~
+                ~~- [ ] Elapsed time~~
+                ~~- [ ] Damange Taken Notification~~
                          - [x] Closed Caption Needed
-                - [ ] Companion Death Notification
+                ~~- [ ] Companion Death Notification~~
                          - [x] Closed Caption Needed
                 - [x] Companion Notification
                     - [X] Item Near
@@ -155,10 +155,28 @@ Day 4 Goals: (2/2/2023)
             
 
 Day 5 Goals: (2/3/2023)
+- [ ] VFX 
+    - [ ] Screen Shake [when damage taken]
+    - [ ] Dirt
+    - [ ] smoke
+- [ ] Game Mechanics    
+     - [ ] Lock and Key
+     - [ ] Collection/Collectables
+     - [ ] Multiple Endings Based on %
+       - [ ] Hidden Boss Battle (Harm or Trap win condition)
+- [ ] Game Controls    
+- [ ] Character Storage For Pickup Items (Visual & Mechanic)
+- [ ] Local Storage     
+    - [ ] Time To Complete
+    - [ ] Completionist
+    - [ ] Inventory
+- [ ] Game Manager
+- [ ] Event Handlers [managing new events]
+- [ ] Player States                   
 
 - [ ] Blender Motion Capture
+    - [ ] convert to rigs
 - [ ] World Building (Design & FX)
-
 - [ ] Text Asset Images/Atlas (Visual)
 - [ ] 2D Assets
     - [ ] title
@@ -197,15 +215,29 @@ Day 5 Goals: (2/3/2023)
         - [ ] gem 3
 - [ ] Visual Story
 - [ ] Main BG Audio
-
-- [ ] VFX 
-    - [ ] Screen Shake [when damage taken]
-    - [ ] Dirt
-    - [ ] smoke
-    - [ ] Item Glow
-    - [X] Damage Taken
-- [ ] Web Build
+- [ ] Web Build (https://webofblood.itch.io/taproot)    
 - [ ] Bugs Review
+    - [ ] Sample Build Requirements
+        - [ ] Companion                 
+                - [ ] Adjust Scan Animation                
+        - [ ] Add Base Graphics
+        - [ ] UI Update
+            - [ ] Pause Menu 
+                - [ ] Inventory Display
+            - [ ] Game Over
+                - [ ] Final Time Display
+                - [ ] High Score Display
+                - [ ] Total Death Count Display 
+            - [ ] Pre Start
+                - [ ] GamePlay & Completion Instructions
+                    - [ ] Image only
+            - [ ] Game Play
+                - [ ] Score
+                - [ ] Elapsed time
+                - [ ] Damange Taken Notification                         
+                - [ ] Companion Death Notification      
+
+
 
 Day 6 Goals: (2/4/2023)
 - [ ] Firebase Crashlytics (Android Only)

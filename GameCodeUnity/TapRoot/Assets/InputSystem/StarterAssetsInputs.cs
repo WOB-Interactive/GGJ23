@@ -10,8 +10,9 @@ namespace StarterAssets
 	{
 
 		public static event Action OnPausePressed;
-		public static event Action OnInteractPressed; // to add once ready
-		public static event Action OnActivatePower; // to add once ready
+		public static event Action OnInteractPressed; 
+		public static event Action OnActivatePower; 
+		
 
 		public bool canMove = false;
 
@@ -32,9 +33,10 @@ namespace StarterAssets
 		[Header("Custom Settings")]
 		public bool paused;
 		public bool powerActivate;
+		public bool interaction;
 
 
-        private void OnEnable()
+		private void OnEnable()
         {
 
 			GameManager.GameStateChange += OnGameStateChangeHandler;
@@ -114,10 +116,17 @@ namespace StarterAssets
 			if (value.isPressed)
 				OnActivatePower?.Invoke();
 		}
+		public void OnInteract(InputValue value)
+        {
+
+			interaction = value.isPressed;
+			if (value.isPressed)
+				OnInteractPressed?.Invoke();
+		}
 #endif
 
 
-        public void MoveInput(Vector2 newMoveDirection)
+		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
