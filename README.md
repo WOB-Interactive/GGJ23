@@ -5,6 +5,9 @@ Game Theme: Roots
 
 Global Game Jam Sites and TODOs
 
+
+~~ x~~ :  Moved to Next Day
+
 Day 1 Goals: (1/30/2023)
 - [X] Unity 3d 3rd Person Project - WebExport
 - [X] Github Repo
@@ -53,7 +56,6 @@ Day 2 Goals: (1/31/2023)
 ~~- [ ] Web Build~~
 - [X] Bugs Review
 
-[~~ x~~ :  Moved to Next Day]
 
 
 Day 3 Goals: (2/1/2023)
@@ -155,6 +157,9 @@ Day 4 Goals: (2/2/2023)
             
 
 Day 5 Goals: (2/3/2023)
+ - [X] Sleep
+
+Day 6 Goals: (2/4/2023)
 - [ ] VFX 
     - [ ] Screen Shake [when damage taken]
     - [ ] Dirt
@@ -173,9 +178,9 @@ Day 5 Goals: (2/3/2023)
 - [ ] Game Manager
 - [ ] Event Handlers [managing new events]
 - [ ] Player States                   
-
-- [ ] Blender Motion Capture
-    - [ ] convert to rigs
+- [X] Blender Motion Capture
+    - [X] convert to rigs
+        - Hard Failure, there should be a way to save the motion capture or save the animation.  
 - [ ] World Building (Design & FX)
 - [ ] Text Asset Images/Atlas (Visual)
 - [ ] 2D Assets
@@ -192,20 +197,20 @@ Day 5 Goals: (2/3/2023)
     - [ ] Player HomeFamily    
         - [ ] Completion associations (special items)
 - [ ] 3D Assets
-    - [ ] Player
+    - [X] Player
     - [ ] Companion
-    - [ ] Enemy 1
+    - [X] Enemy 1
     - [ ] Boss 1
-    - [ ] Enemy 2 
-    - [ ] pickup 1
-    - [ ] pickup 2
-    - [ ] pickup 3
-    - [ ] pickup 4
+    - [X] Enemy 2 
+    - [ ] Carrots,
+    - [ ] radishes,
+    - [ ] turnips,
+    - [ ] beets.
     - [ ] Grass
-    - [ ] Dirt Patch
-    - [ ] trees
-    - [ ] rocks
-    - [ ] spaceship
+    - [X] Dirt Patch
+    - [X] trees
+    - [X] rocks
+    - [X] spaceship
     - [ ] Special Items
         - [ ] glasses
         - [ ] hat
@@ -234,12 +239,8 @@ Day 5 Goals: (2/3/2023)
             - [ ] Game Play
                 - [ ] Score
                 - [ ] Elapsed time
-                - [ ] Damange Taken Notification                         
+                - [ ] Damange Taken Notification                
                 - [ ] Companion Death Notification      
-
-
-
-Day 6 Goals: (2/4/2023)
 - [ ] Firebase Crashlytics (Android Only)
 - [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)
 - [ ] Web Build
