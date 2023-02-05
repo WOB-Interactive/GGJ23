@@ -1,10 +1,7 @@
 # GGJ23
 Global Game Jam 2023 Repo
-
 Game Theme: Roots
-
 Global Game Jam Sites and TODOs
-
 
 ~~ x~~ :  Moved to Next Day
 
@@ -153,10 +150,11 @@ Day 4 Goals: (2/2/2023)
                     - [X] Enemy Near
                          - [x] Closed Caption Needed
             - [X] Closed Caption 
-            
-            
 
 Day 5 Goals: (2/3/2023)
+- [X] Blender Motion Capture
+    - [X] convert to rigs
+        - Hard Failure, there should be a way to save the motion capture or save the animation. 
  - [X] Sleep
 
 Day 6 Goals: (2/4/2023)
@@ -177,47 +175,49 @@ Day 6 Goals: (2/4/2023)
     - [ ] Inventory
 - [ ] Game Manager
 - [ ] Event Handlers [managing new events]
-- [ ] Player States                   
-- [X] Blender Motion Capture
-    - [X] convert to rigs
-        - Hard Failure, there should be a way to save the motion capture or save the animation.  
+- [ ] Player States                    
 - [ ] World Building (Design & FX)
 - [ ] Text Asset Images/Atlas (Visual)
 - [ ] 2D Assets
-    - [ ] title
+    - [x] title
     - [ ] player
     - [ ] companion
-    - [ ] enemy Alert
-    - [ ] Item Alert
-    - [ ] pickup 1
-    - [ ] pickup 2
-    - [ ] pickup 3
-    - [ ] pickup 4
-    - [ ] TMP Pro Custom Font
+    - [x] enemy Alert
+    - [x] Item Alert
+    - [x] pickup 1
+    - [x] pickup 2
+    - [x] pickup 3
+    - [x] pickup 4
+    - [X] TMP Pro Custom Font
+        - [ ] TTF conversions (On the Unity Menu, go to Window -> TexMesh Pro -> Font Asset creator, and select the font you want to convert.)
     - [ ] Player HomeFamily    
         - [ ] Completion associations (special items)
 - [ ] 3D Assets
     - [X] Player
-    - [ ] Companion
+    - [X] Companion
     - [X] Enemy 1
     - [ ] Boss 1
     - [X] Enemy 2 
-    - [ ] Carrots,
-    - [ ] radishes,
-    - [ ] turnips,
-    - [ ] beets.
-    - [ ] Grass
+    - [X] Carrots
+    - [X] radishes
+    - [x] turnips
+    - [X] beets
+    ~~- [ ] Grass~~
     - [X] Dirt Patch
+    - [X] Bones
+        - [x] head
+        - [X] Arm
+        - [X] foot
     - [X] trees
     - [X] rocks
     - [X] spaceship
-    - [ ] Special Items
-        - [ ] glasses
-        - [ ] hat
-        - [ ] gloves
-        - [ ] gem 1
-        - [ ] gem 2
-        - [ ] gem 3
+    - [x] Special Items
+        ~~- [ ] glasses~~
+        ~~- [ ] hat~~
+        ~~- [ ] gloves~~
+        - [x] gem 1
+        - [x] gem 2
+        - [x] gem 3
 - [ ] Visual Story
 - [ ] Main BG Audio
 - [ ] Web Build (https://webofblood.itch.io/taproot)    
@@ -241,12 +241,66 @@ Day 6 Goals: (2/4/2023)
                 - [ ] Elapsed time
                 - [ ] Damange Taken Notification                
                 - [ ] Companion Death Notification      
-- [ ] Firebase Crashlytics (Android Only)
-- [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)
-- [ ] Web Build
-- [ ] Bugs Review
+~~- [ ] Firebase Crashlytics (Android Only)~~
+~~- [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)~~
 
-Day 7 Goals: (2/5/2023)
+Final Night:
+- [ ] VFX 
+    - [ ] Screen Shake [when damage taken]
+    - [ ] Dirt
+    - [ ] smoke
+- [ ] Game Mechanics    
+     - [ ] Lock and Key
+     - [ ] Collection/Collectables
+     - [ ] Multiple Endings Based on %
+       - [ ] Hidden Boss Battle (Harm or Trap win condition)
+- [ ] Game Controls    
+- [ ] Character Storage For Pickup Items (Visual & Mechanic)
+- [ ] Local Storage     
+    - [ ] Time To Complete
+    - [ ] Completionist
+    - [ ] Inventory
+- [ ] Game Manager
+- [ ] Event Handlers [managing new events]
+- [ ] Player States                    
+- [ ] World Building (Design & FX)
+- [ ] Text Asset Images/Atlas (Visual)
+- [ ] 2D Assets
+    - [ ] player
+    - [ ] companion
+    - [X] TMP Pro Custom Font
+        - [ ] TTF conversions (On the Unity Menu, go to Window -> TexMesh Pro -> Font Asset creator, and select the font you want to convert.)
+    - [ ] Player HomeFamily    
+        - [ ] Completion associations (special items)
+- [ ] 3D Assets
+    - [ ] Boss 1
+- [ ] Visual Story
+- [ ] Main BG Audio
+- [ ] Web Build (https://webofblood.itch.io/taproot)    
+- [ ] Bugs Review
+    - [ ] Sample Build Requirements
+        - [ ] Companion                 
+                - [ ] Adjust Scan Animation                
+        - [ ] Add Base Graphics
+        - [ ] UI Update
+            - [ ] Pause Menu 
+                - [ ] Inventory Display
+            - [ ] Game Over
+                - [ ] Final Time Display
+                - [ ] High Score Display
+                - [ ] Total Death Count Display 
+            - [ ] Pre Start
+                - [ ] GamePlay & Completion Instructions
+                    - [ ] Image only
+            - [ ] Game Play
+                - [ ] Score
+                - [ ] Elapsed time
+                - [ ] Damange Taken Notification                
+                - [ ] Companion Death Notification      
+
+
+
+Day 7 Goals: (2/5/2023) 
 - [ ] Bugs Review
 - [ ] Web Build
 - [ ] Submission
