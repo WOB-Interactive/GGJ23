@@ -31,8 +31,12 @@ public class PIckupItem : MonoBehaviour
 
     private void Awake()
     {
-        Instantiate(item.PickupItemPrefab, itemModelAssetLocation.transform);
-        PickupItemElement.PickedUp += HandlePickup;
+
+        if (item)
+        {
+            Instantiate(item.PickupItemPrefab, itemModelAssetLocation.transform);
+        }
+            PickupItemElement.PickedUp += HandlePickup;
     }
 
     public void OnItemFoundHandler()
@@ -55,8 +59,8 @@ public class PIckupItem : MonoBehaviour
         if (pickupSoundFX != String.Empty)
         {
             AudioManager.instance.PlaySound(pickupSoundFX);            
-        }       
-        
+        }
+        gameObject.SetActive(false);
         Destroy(gameObject, objectDestroyLifetime);
     }
 

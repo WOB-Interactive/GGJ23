@@ -61,6 +61,11 @@ public class PlayerFeatures : MonoBehaviour
             currentInteract = collision.GetComponent<InteractItem>();
             OnInteractiveAllowed?.Invoke(currentInteract);
         }
+
+        if (collision.CompareTag("Pickup") && collision.gameObject.activeSelf)
+        {
+           collision.gameObject.GetComponent<PIckupItem>().HandlePickup();
+        }
     }
 
     private void HandleUncollision()

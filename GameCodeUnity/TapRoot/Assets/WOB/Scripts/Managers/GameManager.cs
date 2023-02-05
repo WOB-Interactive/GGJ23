@@ -180,11 +180,7 @@ public class GameManager : MonoBehaviour
         ccEnabled = !ccEnabled;
         Storage.SetClosedCaptionEnabled(ccEnabled);
 
-        if (ccEnabled)
-        {
-            ClosedCaption.
-        }
-        //
+              //
         // TODO adjust to notify about closed caption
         //closedCaptionButton.GetComponentInChildren<TMPro.TMP_Text>().SetText ( (!ccEnabled) ?  "[cc] - off" : "[CC]");
     }
@@ -225,7 +221,7 @@ public class GameManager : MonoBehaviour
     #region Custom Event Handlers
     public void OnItemPickupHandler(PickUpItemStruct item)
     {
-        score += item.pickupPoints;
+      score += item.pickupPoints;
     }
 
     void OnTimerExpiredHandler()
