@@ -269,7 +269,7 @@ Final Night:
     - [ ] player
     - [ ] companion
     - [X] TMP Pro Custom Font
-        - [ ] TTF conversions (On the Unity Menu, go to Window -> TexMesh Pro -> Font Asset creator, and select the font you want to convert.)
+        - [X] TTF conversions (On the Unity Menu, go to Window -> TexMesh Pro -> Font Asset creator, and select the font you want to convert.)
     - [ ] Player HomeFamily    
         - [ ] Completion associations (special items)
 - [ ] 3D Assets
@@ -281,7 +281,7 @@ Final Night:
     - [ ] Sample Build Requirements
         - [ ] Companion                 
                 - [ ] Adjust Scan Animation                
-        - [ ] Add Base Graphics
+        - [X] Add Base Graphics
         - [ ] UI Update
             - [ ] Pause Menu 
                 - [ ] Inventory Display
@@ -289,12 +289,12 @@ Final Night:
                 - [ ] Final Time Display
                 - [ ] High Score Display
                 - [ ] Total Death Count Display 
-            - [ ] Pre Start
+            - [x] Pre Start
                 - [ ] GamePlay & Completion Instructions
-                    - [ ] Image only
+                    - [X] Image only
             - [ ] Game Play
-                - [ ] Score
-                - [ ] Elapsed time
+                - [x] Score
+                - [X] Elapsed time
                 - [ ] Damange Taken Notification                
                 - [ ] Companion Death Notification      
 
@@ -308,7 +308,6 @@ Day 7 Goals: (2/5/2023)
 
 Firebase
 - https://firebase.google.com/learn/pathways/firebase-advanced-crashlytics
-
 - https://firebase.google.com/learn/pathways/firebase-leaderboards-with-firestore
 
 Sharing Is Caring (Sponsored by GitHub): Share the source code for your submission in a public GitHub repository and list the URL on your submission page.

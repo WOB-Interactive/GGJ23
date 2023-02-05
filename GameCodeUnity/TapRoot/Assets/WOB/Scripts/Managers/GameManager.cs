@@ -180,7 +180,13 @@ public class GameManager : MonoBehaviour
         ccEnabled = !ccEnabled;
         Storage.SetClosedCaptionEnabled(ccEnabled);
 
-        closedCaptionButton.GetComponentInChildren<TMPro.TMP_Text>().SetText ( (!ccEnabled) ?  "[cc] - off" : "[CC]");
+        if (ccEnabled)
+        {
+            ClosedCaption.
+        }
+        //
+        // TODO adjust to notify about closed caption
+        //closedCaptionButton.GetComponentInChildren<TMPro.TMP_Text>().SetText ( (!ccEnabled) ?  "[cc] - off" : "[CC]");
     }
 
     #endregion
