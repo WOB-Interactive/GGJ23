@@ -158,30 +158,30 @@ Day 5 Goals: (2/3/2023)
  - [X] Sleep
 
 Day 6 Goals: (2/4/2023)
-- [ ] VFX 
-    - [ ] Screen Shake [when damage taken]
-    - [ ] Dirt
-    - [ ] smoke
-- [ ] Game Mechanics    
-     - [ ] Lock and Key
-     - [ ] Collection/Collectables
-     - [ ] Multiple Endings Based on %
-       - [ ] Hidden Boss Battle (Harm or Trap win condition)
-- [ ] Game Controls    
-- [ ] Character Storage For Pickup Items (Visual & Mechanic)
-- [ ] Local Storage     
-    - [ ] Time To Complete
-    - [ ] Completionist
-    - [ ] Inventory
-- [ ] Game Manager
-- [ ] Event Handlers [managing new events]
-- [ ] Player States                    
-- [ ] World Building (Design & FX)
-- [ ] Text Asset Images/Atlas (Visual)
-- [ ] 2D Assets
+~~- [ ] VFX  ~~
+    ~~- [ ] Screen Shake [when damage taken] ~~
+    ~~- [ ] Dirt ~~
+    ~~- [ ] smoke ~~
+~~- [ ] Game Mechanics     ~~
+     ~~- [ ] Lock and Key ~~
+     ~~- [ ] Collection/Collectables ~~
+     ~~- [ ] Multiple Endings Based on % ~~
+       ~~- [ ] Hidden Boss Battle (Harm or Trap win condition) ~~
+~~- [ ] Game Controls   ~~  
+~~- [ ] Character Storage For Pickup Items (Visual & Mechanic) ~~
+~~- [ ] Local Storage     ~~ 
+    ~~- [ ] Time To Complete ~~
+    ~~- [ ] Completionist ~~
+    ~~- [ ] Inventory ~~
+~~- [ ] Game Manager ~~
+~~- [ ] Event Handlers [managing new events] ~~
+~~- [ ] Player States   ~~                  
+~~- [ ] World Building (Design & FX) ~~
+~~- [ ] Text Asset Images/Atlas (Visual) ~~
+~~- [ ] 2D Assets
     - [x] title
-    - [ ] player
-    - [ ] companion
+    ~~- [ ] player ~~
+    ~~- [ ] companion ~~
     - [x] enemy Alert
     - [x] Item Alert
     - [x] pickup 1
@@ -189,14 +189,14 @@ Day 6 Goals: (2/4/2023)
     - [x] pickup 3
     - [x] pickup 4
     - [X] TMP Pro Custom Font
-        - [ ] TTF conversions (On the Unity Menu, go to Window -> TexMesh Pro -> Font Asset creator, and select the font you want to convert.)
-    - [ ] Player HomeFamily    
-        - [ ] Completion associations (special items)
+      ~~  - [ ] TTF conversions (On the Unity Menu, go to Window -> TexMesh Pro -> Font Asset creator, and select the font you want to convert.) ~~
+    ~~- [ ] Player HomeFamily     ~~
+      ~~  - [ ] Completion associations (special items) ~~
 - [ ] 3D Assets
     - [X] Player
     - [X] Companion
     - [X] Enemy 1
-    - [ ] Boss 1
+    - [ ] Boss 1 ~~
     - [X] Enemy 2 
     - [X] Carrots
     - [X] radishes
@@ -218,29 +218,29 @@ Day 6 Goals: (2/4/2023)
         - [x] gem 1
         - [x] gem 2
         - [x] gem 3
-- [ ] Visual Story
-- [ ] Main BG Audio
-- [ ] Web Build (https://webofblood.itch.io/taproot)    
-- [ ] Bugs Review
-    - [ ] Sample Build Requirements
-        - [ ] Companion                 
-                - [ ] Adjust Scan Animation                
-        - [ ] Add Base Graphics
-        - [ ] UI Update
-            - [ ] Pause Menu 
-                - [ ] Inventory Display
-            - [ ] Game Over
-                - [ ] Final Time Display
-                - [ ] High Score Display
-                - [ ] Total Death Count Display 
-            - [ ] Pre Start
-                - [ ] GamePlay & Completion Instructions
-                    - [ ] Image only
-            - [ ] Game Play
-                - [ ] Score
-                - [ ] Elapsed time
-                - [ ] Damange Taken Notification                
-                - [ ] Companion Death Notification      
+~~- [ ] Visual Story ~~
+~~- [ ] Main BG Audio ~~
+~~- [ ] Web Build (https://webofblood.itch.io/taproot)    ~~ 
+~~- [ ] Bugs Review ~~
+  ~~  - [ ] Sample Build Requirements ~~
+    ~~    - [ ] Companion    ~~              
+      ~~          - [ ] Adjust Scan Animation      ~~           
+        ~~- [ ] Add Base Graphics ~~
+        ~~- [ ] UI Update ~~
+          ~~  - [ ] Pause Menu  ~~
+            ~~    - [ ] Inventory Display ~~
+~~            - [ ] Game Over ~~
+  ~~              - [ ] Final Time Display ~~
+    ~~            - [ ] High Score Display ~~
+      ~~          - [ ] Total Death Count Display  ~~
+            ~~- [ ] Pre Start ~~
+              ~~  - [ ] GamePlay & Completion Instructions ~~
+                ~~    - [ ] Image only ~~
+                ~~- [ ] Damange Taken Notification     ~~~~             
+            ~~- [ ] Game Play ~~
+                ~~- [ ] Score ~~
+                ~~- [ ] Elapsed time ~~
+                ~~ - [ ] Companion Death Notification     ~~  
 ~~- [ ] Firebase Crashlytics (Android Only)~~
 ~~- [ ] Firebase firestore - Leaderboards (SpeedRun?, HighScore)~~
 

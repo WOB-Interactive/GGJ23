@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Beets
   m_EditorClassIdentifier: 
   pickupPoints: 23
-  PickupItemPrefab: {fileID: 7796390346285870245, guid: 94ad8463c01d1094bab78a8e8ce05ca3,
+  PickupItemPrefab: {fileID: 1621263470776314314, guid: c48718c75416bc2488bc98c2445864f9,
     type: 3}

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d571db10ae9fa35449e464f41b2cae07, type: 3}
   m_Name: Turnips
   m_EditorClassIdentifier: 
+  pickupPoints: 10
+  PickupItemPrefab: {fileID: 6519052209150723342, guid: 1173e9b9554e5004aa348bf3c78abba2,
+    type: 3}

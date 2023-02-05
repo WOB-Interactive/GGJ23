@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d571db10ae9fa35449e464f41b2cae07, type: 3}
   m_Name: Carrots
   m_EditorClassIdentifier: 
+  pickupPoints: 10
+  PickupItemPrefab: {fileID: 5857293185964524853, guid: d05acf1b603ba5245b5a3b115435e87c,
+    type: 3}

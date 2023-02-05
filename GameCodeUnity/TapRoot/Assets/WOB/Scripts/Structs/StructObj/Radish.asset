@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d571db10ae9fa35449e464f41b2cae07, type: 3}
   m_Name: Radish
   m_EditorClassIdentifier: 
+  pickupPoints: 10
+  PickupItemPrefab: {fileID: 8944616789758502231, guid: 0634b6bfe92e3f64bbc4624b37650c01,
+    type: 3}
