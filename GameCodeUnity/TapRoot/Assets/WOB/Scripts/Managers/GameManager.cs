@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
         DeathZone.OnPlayerKilledInZone += OnPlayerKilledInZoneHandler;
         Storage.OnHighScore += OnHighScoreHandler;
         StarterAssets.StarterAssetsInputs.OnPausePressed += OnPausePressedHandler;
+        ExitWorld.GetOutOfHere += HandleEndingScreen;
+        PlayerFeatures.GetOutOfHere += HandleEndingScreen;
     }
 
     private void OnDisable()
@@ -70,6 +72,8 @@ public class GameManager : MonoBehaviour
         DeathZone.OnPlayerKilledInZone -= OnPlayerKilledInZoneHandler;
         Storage.OnHighScore -= OnHighScoreHandler;
         StarterAssets.StarterAssetsInputs.OnPausePressed -= OnPausePressedHandler;
+        ExitWorld.GetOutOfHere -= HandleEndingScreen;
+        PlayerFeatures.GetOutOfHere -= HandleEndingScreen;
 
     }
 
@@ -139,7 +143,30 @@ public class GameManager : MonoBehaviour
         scoreDisplay.SetText(String.Format("Score: {0}", score));
     }
     void HandleCutSceneScreen() { }
-    void HandleEndingScreen() { }
+    void HandleEndingScreen() {
+
+        Cursor.visible = false;
+        // Locks the cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        preStartScreen.SetActive(false);
+        gameOverScreen.SetActive(true);
+        pausedScreen.SetActive(false);
+        gamePlayScreen.SetActive(true);
+        gameTimeLimit.startTimer();
+        Time.timeScale = 1;
+        scoreDisplay.SetText(String.Format("Score: {0}", score));
+        Storage.SetHighscore(score);
+
+        StartCoroutine("ShowEnding");
+    }
+
+
+    IEnumerator ShowEnding() {
+        yield return new WaitForSeconds(5);
+        Cursor.visible = true;
+        SceneManager.LoadScene("Credits");
+    }
+
     void HandleGameOverScreen() {
         highScoreTag.gameObject.SetActive(false);
         gamePlayScreen.SetActive(false);

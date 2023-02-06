@@ -8,6 +8,7 @@ TagManager:
   - Pickup
   - Enemy
   - Interactive
+  - Ship
   layers:
   - Default
   - TransparentFX

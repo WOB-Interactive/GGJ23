@@ -19,6 +19,7 @@ public class PlayerFeatures : MonoBehaviour
     public static event Action OnPlayerDeath;
     public static event Action<InteractItem> OnInteractiveAllowed;
     public static event Action OnNoInteraction;
+    public static event Action GetOutOfHere;
 
     PlayerStates currentState = PlayerStates.Alive; // used for another reason you'll see
 
@@ -57,6 +58,8 @@ public class PlayerFeatures : MonoBehaviour
             OnPlayerDeath?.Invoke();
         }
 
+        
+
         if(collision.CompareTag("Interactive")) {
             currentInteract = collision.GetComponent<InteractItem>();
             OnInteractiveAllowed?.Invoke(currentInteract);
@@ -65,6 +68,13 @@ public class PlayerFeatures : MonoBehaviour
         if (collision.CompareTag("Pickup") && collision.gameObject.activeSelf)
         {
            collision.gameObject.GetComponent<PIckupItem>().HandlePickup();
+        }
+
+
+        if (collision.CompareTag("Ship"))
+        {
+            currentInteract = collision.GetComponent<InteractItem>();
+            OnInteractiveAllowed?.Invoke(currentInteract);
         }
     }
 

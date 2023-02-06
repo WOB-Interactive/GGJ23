@@ -15,17 +15,17 @@ PrefabInstance:
     - target: {fileID: 2407985232417455280, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6019125
+      value: 1.0473406
       objectReference: {fileID: 0}
     - target: {fileID: 2407985232417455280, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25985405
       objectReference: {fileID: 0}
     - target: {fileID: 2407985232417455280, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.3506246
+      value: 3.6181178
       objectReference: {fileID: 0}
     - target: {fileID: 2407985232417455280, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
         type: 3}
@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 2407985232417455281, guid: dde5e75cbd5c47a4b9d97338e4b8abde,
         type: 3}
       propertyPath: m_Name
-      value: Pickup (2)
+      value: BeetsPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde5e75cbd5c47a4b9d97338e4b8abde, type: 3}
